@@ -1,0 +1,155 @@
+/* pages/lookingInvestment/lookingInvestment.wxss */
+/* 顶部搜索 */
+.search {
+	padding: 20rpx;
+	font-size: 28rpx;
+}
+.searchArea{
+  position: relative;
+  width: 52%;
+	border: 2rpx solid #09bb07;
+  border-radius: 10rpx;
+  padding: 0 28rpx;
+	height: 62rpx;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+.btn{
+  width: 47%;
+  justify-content: space-around;
+  margin-left: 1%;
+}
+.btn>view{
+  position:relative;
+  margin-left:auto;
+  color: #09bb07;
+  display: inline-block;
+  margin-right:auto;
+  padding: 5rpx 30rpx;
+  line-height: 2.3;
+  box-sizing:border-box;
+  text-align:center;
+  text-decoration:none;
+  font-size: 24rpx;
+  border: 1px solid #09bb07;
+  border-radius:5px;
+  -webkit-tap-highlight-color:transparent;
+}
+.btn button{
+  line-height: none;
+  color: #fff;
+  padding: 5rpx 20rpx;
+  font-size: 24rpx;
+  border: 1px solid #09bb07;
+  background: #09bb07;
+}
+.btn .button-hover{
+  color: #fff;
+  background: #09bb90;
+}
+.btn image{
+  position: absolute;
+  right: 5rpx;
+  top: 20rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+.searchArea image {
+	width: 40rpx;
+	height: 40rpx;
+  position: absolute;
+  left: 10rpx;
+  top: 10rpx;
+}
+.searchArea input {
+  width: 100%;
+	font-size: 24rpx;
+	color: #333;
+}
+/* 海报 */
+.banner image{
+  width: 100%;
+  height: 374rpx;
+}
+.classification{
+  justify-content: space-around;
+  box-shadow: border-box;
+  font-size: 24rpx;
+  padding:0 20rpx;
+  color: #666;
+  background: #fff;
+}
+.sign_in, .great_video, .desktop, .office_rental, .BP_write, .development{
+  width: 110rpx;
+  text-align: center;
+  margin: 10rpx 30rpx;
+}
+.classification_img{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+  border-radius: 40rpx;
+}
+.classification image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-top: 10rpx;
+}
+/* 列表 */
+.looking_investment_list{
+  background: #fff;
+  margin-top: 10rpx;
+}
+.empty{
+  color: #aaa;
+  text-align: center;
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+.investment_list{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.investment_list_image{
+  border: 1rpx solid #ccc;
+  width: 100rpx; 
+  height: 100rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+.investment_list_image image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.investment_list_content{
+  padding: 0 15rpx;
+  width: 60%;
+  font-size: 26rpx;
+  color: #999;
+}
+.investment_list_btn button{
+  display: block;
+}
+.investment_list_name{
+  color: #333;
+  font-size: 36rpx;
+}
+.investment_list_name image{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+  vertical-align:middle;
+}
+.investment_list_feedback text{
+  color: #09bb07;
+}
+ .investment_list_btn button[size="mini"]{
+  line-height: 2;
+} 
+.investment_list_btn button{
+  margin: 15rpx 0;
+  border: 1rpx solid #09bb07;
+  color: #09bb07;
+}

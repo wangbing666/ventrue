@@ -1,0 +1,116 @@
+<!--logs.wxml-->
+<view>
+	<view class="header row">
+    <view class="order row"  wx:if="{{!showSearch}}" bindtap="showSearch">
+			<image src="../res/img/search.png"></image>
+			<view>搜索</view>
+		</view>
+		<view class="searchBtn row"  wx:if="{{!showSearch}}" bindtap="contacts">
+			<image src="../res/img/search.png"></image>
+			<view>人脉推荐</view>
+		</view>
+		<view class="search row" wx:if="{{showSearch}}">
+			<view class="searchArea" >
+				<input type="text"  focus="true" placeholder="请输入关键字" placeholder-style="color:#e5e5e5" bindinput="inputContent"/>
+			</view>
+			<view bindtap="confirmSearch" class="confirmSearch">搜索</view>
+			<view class="cancelSearch" bindtap="cancelSearch">取消</view>
+		</view>
+	</view>
+	<view class="reDetail" wx:if="{{backCard && backCard.length > 0}}">
+		<view>您有待处理的回传名片</view>
+		<view class="row">
+			<image src="{{item.returnCard.bcPhoto}}" wx:for="{{backCard}}" data-id="{{item.returnCard.id}}" bindtap="goDetail"></image>
+		</view>
+	</view>
+	<scroll-view scroll-y="true" style="height:1018rpx;">
+     <view class="main" bindtap="selectType" data-id="{{selectedId}}">
+      <view class="orderItem row">
+        <view class="leftItem row">
+          <view class="avatar">
+            <image src="../res/img/name.png"></image>
+          </view> 
+          <view class="baseInfo">
+            <view class="uname row">{{selectType}}</view>
+          </view>
+        </view>
+        <!-- <view class="selectedBtn">
+            <image src="../res/img/selected.png" wx:if="{{selectedId==0}}"></image>
+        </view>  -->
+      </view>
+    </view>
+    <!-- <view class="main" bindtap="selectType" data-id="1">
+      <view class="orderItem row">
+        <view class="leftItem row">
+          <view class="avatar">
+            <image src="../res/img/time.png"></image>
+          </view>
+          <view class="baseInfo">
+            <view class="uname row">按时间</view>
+          </view>
+        </view>
+        <view class="selectedBtn">
+          <image src="../res/img/selected.png" wx:if="{{selectedId==1}}"></image>
+        </view> 
+      </view>
+    </view> -->
+    <view class="main">
+      <view class="orderItem row">
+        <view class="leftItem row">
+          <view class="avatar">
+            <image src="/image/telPhone/xiaoge.jpg"></image>
+          </view> 
+          <view class="baseInfo">
+            <view class="uname row">创小哥<text class='identity'>客服</text></view>
+          </view>
+        </view>
+        <view class="rightItem">
+          <image class="tel" src="../res/img/tel.png" catchtap="makeCall" data-looked="true" data-id="17601211596"></image>
+        </view>
+      </view>
+    </view>
+    <view class="main">
+      <button class="orderItem row" open-type="contact">
+        <view class="leftItem row">
+          <view class="avatar">
+            <image src="../res/img/avatar.png"></image>
+          </view> 
+          <view class="baseInfo" align="absmiddle">
+            <view class="uname row">创小妹<text class='identity'>客服</text></view>
+          </view>
+        </view>
+        <view class="rightItem">
+          <image class="tel" src="../res/img/kefu.png" bindtap="wechatConsulting" data-looked="true" data-id="17601211596"></image>
+        </view>
+      </button>
+    </view>
+    <view class="orderList {{looked ? 'dark' : ''}}" wx:for="{{cardList}}">
+      <view class="title row">{{item.group}}</view>
+      <view class="orderItem row" wx:for="{{item.coverCards}}" bindtap="getCard" data-id="{{item.id}}">
+        <view class="leftItem row">
+          <view class="avatar">
+            <image src="{{item.looked ? item.bcPhoto : '../res/img/lock.png'}}"></image>
+          </view> 
+          <view class="baseInfo">
+            <view class="uname row"><text class="bcName {{!item.looked ? 'dark' : ''}}">{{item.bcName}}</text> <text class="identity {{!item.looked ? 'dark' : ''}}">{{item.identity == 0 ? '创业者' : (item.identity == 1 ? '投资者' : (item.identity == 2 ? '空间' : (item.identity == 3 ?'服务':'其他')))}}</text></view>
+            <view class="company">{{item.company}}</view>
+          </view>
+        </view>
+        <view class="rightItem">
+          <image class="tel" src="../res/img/{{item.looked ? 'tel' : 'lock'}}.png" catchtap="makeCall" data-id="{{item.bcMobile}}" data-looked="{{item.looked}}"></image>
+        </view>
+      </view>
+    </view>
+	</scroll-view>
+</view>
+<view class="modal" bindtouchstart="closeModal" wx:if="{{showModal}}"></view>
+<view class="limitTips" wx:if="{{showTips}}">
+	<view class="tipsTitle"><text>查看权限</text></view>
+	<view class="tipsContent">     每名用户默认每天可查看 1 位；名片被查看数超过 200，每天可查看 3 位；名片查看数超过 500，每天可查看 5 位；名片查看数超过 1000，每天可查看 7 位；名片查看数超过 2000，每天可查看 10 位。</view>
+	<view class="tipsBtn" bindtap="closeModal">我知道了</view>
+</view>
+<view class='modal' bindtap='close' wx:if="{{mmWechat}}">
+  <view class='screenshots'>截图后打开微信扫一扫添加客服-创小妹
+    <image src="../../image/development/MMwechat.jpg"></image>
+  </view>
+</view>

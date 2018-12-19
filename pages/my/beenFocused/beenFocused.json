@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "已关注",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "dialog": "/Components/toast/toast"
+  }
+}

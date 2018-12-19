@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "BP撰写",
+  "usingComponents": {
+    "dialog": "/Components/toast/toast"
+  }
+}

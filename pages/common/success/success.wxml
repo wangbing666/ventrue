@@ -1,0 +1,31 @@
+<!--pages/development/development-success/development-success.wxml-->
+<view class='success'>
+  <view class='success_info'>
+    <view class="icon-box">
+      <icon class="icon-box-img" type="success" size="93"></icon>
+      <view class="icon-box-ctn">
+        <view class="icon-box-title">操作成功</view>
+        <view class="icon-box-desc">需求资料已提交，我们会尽快联系您</view>
+      </view>
+    </view>
+    <view class="btn-area">
+      <button type="primary" bindtap='getBack'>返回</button>
+    </view>
+  </view>
+  <view class='contact_us'>
+    <view class='contact_us_content'>
+      <view class='contact_us_title'>立即联系我们:</view>
+      <view class='contact_us_sweep'>截图
+        <image src="../../../image/development/screenshot.png" class='screenshot'>
+        </image>后点击微信右上角
+        <image src="../../../image/development/WX20171216-155129@2x.png" class='add'></image>之后           
+        <image src="../../../image/development/WX20171216-155155@2x.png" class='sweep'></image>加我微信：
+      </view>
+    </view>
+    <view class='contact_us_qrCode'>
+      <image src="../../../image/development/WX20171216-154950@2x.png" class='qrCode'></image>
+      <view class='contact_us_tel' bindtap='callUp'><image src="../../../image/development/WX20171216-155444@2x.png" class='tel' ></image>021-61984136</view>
+      <view class='contact_us_email'><image src="../../../image/development/WX20171216-155554@2x.png" class='email'></image>work@luyanquna.com</view>
+    </view>
+  </view>
+</view>

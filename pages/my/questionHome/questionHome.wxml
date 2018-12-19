@@ -1,0 +1,51 @@
+<!--pages/my/questionHome/questionHome.wxml-->
+<wxs  src="../../../common/lib/filter.wxs" module="Filter"></wxs>
+<view class='questionHome'>
+  <view class='investor'>
+    <view class='investor_info row'>
+      <image src='{{question.avatarUrl}}'></image>
+      <view class='investor_name'>
+        <view>{{question.name}}</view>
+        <text>{{question.feedbackCount}}人收听</text>
+      </view>
+      <view class='editHome'>
+        <button size='mini' bindtap="goEditHome">修改主页</button>
+      </view>
+    </view>
+    <view class='investor_content'>
+      <view>{{question.servingOrganization}}，{{question.position}}</view>
+      <view>{{question.achievement}}</view>
+    </view>
+    <button size="default" type="primary" catchtap="bindShare" open-type="share">转发给朋友</button>
+  </view>
+  <view class='questions_list'>
+    <view class='questions_list_title row'>
+        <view>问答与约见</view>
+        <view class='listenCount'>{{questionList.length}}条问答 听过0</view>
+    </view>
+    <view>
+      <view class='questions_user' wx:for="{{questionList}}" wx:key="index" data-value="{{item}}" bindtap='questionDetail'>
+          <view class='user_info row'>
+            <image src="{{item.questioner.avatarUrl}}"></image>
+            <view class='user_info_name'>{{item.questioner.nickName}}</view>
+            <view class='user_info_status row'>
+                <view class='questions_price' wx:if="{{item.type == 0}}">{{question.investor.questionUnitPrice}}</view>
+                <view class='questions_price' wx:if="{{item.type == 1}}">{{question.investor.meetingUnitPrice}}</view>
+                <view class='isQuestions' wx:if="{{item.type == 0 && item.questionState == 0}}">待回答</view>
+                <view class='haveAnswer' wx:if="{{item.type == 0 && item.questionState == 1}}">已回答</view>
+                <view class='haveAnswer' wx:if="{{item.type == 0 && item.questionState == 9}}">已拒绝</view>
+                <view class='isAppointment' wx:if="{{item.type == 1}}">{{Filter.getStatus(item.questionState)}}</view>
+                <view class='appointment' wx:if="{{item.type == 1}}">约见</view>
+            </view>
+          </view>
+          <view class='questions_name'>
+            <view>{{item.message}}</view>
+            <view class='questions_time row'>
+              <text>{{Filter.getDate(item.createdDate)}}</text>
+              <view class='secretly' wx:if="{{item.type == 0 && item.questionState == 1}}">偷偷听{{item.eavesdropCount}}</view>
+            </view>
+          </view>
+      </view>
+    </view>
+  </view>
+</view>

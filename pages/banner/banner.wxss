@@ -1,0 +1,5 @@
+/* banner.wxss */
+@import '../wxParse/wxParse.wxss';
+.description {
+  padding: 10rpx 30rpx
+}

@@ -1,0 +1,57 @@
+/* pages/my/beenFocused/beenFocused.wxss */
+.looking_investment_list{
+  background: #fff;
+  margin-top: 10rpx;
+}
+.empty{
+  color: #aaa;
+  text-align: center;
+  padding: 10rpx;
+  font-size: 24rpx;
+}
+.investment_list{
+  padding: 20rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.investment_list_image{
+  border: 1rpx solid #ccc;
+  width: 100rpx; 
+  height: 100rpx;
+  border-radius: 50rpx;
+  overflow: hidden;
+}
+.investment_list_image image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.investment_list_content{
+  padding: 0 15rpx;
+  width: 60%;
+  font-size: 26rpx;
+  color: #999;
+}
+.investment_list_btn button{
+  display: block;
+}
+.investment_list_name{
+  color: #333;
+  font-size: 36rpx;
+}
+.investment_list_name image{
+  width: 40rpx;
+  height: 40rpx;
+  display: inline-block;
+  margin-left: 10rpx;
+  vertical-align:middle;
+}
+.investment_list_feedback text{
+  color: #09bb07;
+}
+ .investment_list_btn button[size="mini"]{
+  line-height: 2;
+} 
+.investment_list_btn button{
+  margin: 15rpx 0;
+  border: 1rpx solid #09bb07;
+  color: #09bb07;
+}

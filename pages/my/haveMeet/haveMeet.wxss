@@ -1,0 +1,84 @@
+/* pages/my/haveMeet/haveMeet.wxss */
+.haveMeet{
+  color: #999;
+  font-size: 32rpx;
+}
+.haveMeet_QR{
+  background: #fff;
+  padding: 20rpx;
+}
+.QR_image{
+  width: 100rpx;
+  height: 100rpx;
+  padding-left: 30rpx;
+}
+.close{
+  width: 20rpx;
+  height: 20rpx;
+}
+.haveMeet_QR view{
+  flex: 1;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+.haveMeet_list{
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.haveMeet_list>view{
+  padding: 10rpx 0;
+}
+.haveMeet_list_user image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 25rpx;
+}
+.haveMeet_list_user view{
+  padding-left: 20rpx;
+}
+.price{
+  text-align: right;
+  color: red;
+  flex: 1;
+}
+.haveMeet_list_ask{
+  color: #333;
+}
+.haveMeet_list_ask text{
+  border: 1rpx solid green;
+  color: green;
+}
+.ask_time{
+  font-size: 24rpx;
+}
+.investors{
+  background: #fff;
+  padding: 20rpx;
+}
+.investors_info{
+  font-size: 28rpx;
+}
+.investors_info_position{
+  color: #333;
+  font-size: 32rpx;
+}
+.investors_info_position text{
+  color: #999;
+  font-size: 28rpx;
+}
+.listen{
+  flex: 1;
+  color: green;
+  font-size: 24rpx;
+  text-align: right;
+}
+.listen image{
+  width: 40rpx;
+  height: 40rpx;
+}
+button{
+  color: #45bc44;
+  border: 1px solid  #45bc44;
+}

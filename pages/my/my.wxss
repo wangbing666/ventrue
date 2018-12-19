@@ -1,0 +1,243 @@
+page {
+	font-size: 34rpx;
+	color: #000;
+}
+.pending {
+	background: #09bb07;
+	height: 50rpx;
+	padding-left: 80rpx;
+	color: #fff;
+	font-size: 20rpx;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index:1000;
+}
+.pending image {
+	width: 8rpx;
+	height: 14rpx;
+	margin-left: 10rpx;
+}
+.wxCode {
+	width: 98rpx;
+	height: 106rpx;
+	position: absolute;
+	right: 32rpx;
+	top: 37rpx;
+}
+.unLogin {
+	padding: 34rpx 42rpx;
+	background-color: #fff;
+}
+.unLogin image {
+	width: 112rpx;
+	height: 112rpx;
+	margin-right: 32rpx;
+}
+.createCard {
+	font-size: 24rpx;
+	color: #3bb5f4;
+	margin-top: 18rpx;
+}
+
+/* 分类 */
+.my_classification{
+    justify-content: space-around;
+}
+.classification_list{
+  border-right: 2rpx solid #eee;
+  text-align: center;
+  width: 80rpx;
+  padding: 10rpx;
+}
+.classification_list image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.classification_list view{
+  color: #333;
+  font-size: 20rpx;
+}
+.edit ,.history ,.group{
+	background-color: #fff;
+	padding-left: 34rpx;
+}
+.history ,.group {
+	margin-top: 40rpx;
+}
+.edit>view,.history>view ,.group{
+	height: 88rpx;
+}
+.edit>view:not(:first-child) ,.history>view:not(:first-child) {
+	border-top: 2rpx solid #D9D9D9;
+}
+.edit .createBtn > view{
+	width: 710rpx;
+	height: 68rpx;
+	text-align: center;
+	line-height: 68rpx;
+	border-radius: 20rpx;
+	background-color: #09bb07;
+	color: #fff;
+	margin-left: -14rpx;
+}
+.edit image,.history image,.group image {
+	width: 44rpx;
+	height: 44rpx;
+	margin-right: 34rpx;
+}
+.readCard image {
+	height: 36rpx;
+}
+.myCard image {
+	height: 40rpx;
+} 
+.edit .rightArrow,.history .rightArrow ,.group .rightArrow {
+	width: 26rpx;
+	height: 14rpx;
+	transform: rotate(-90deg);
+}
+.generateImg .rightArrow {
+	margin-left: 89rpx;
+	margin-right: 0;
+}
+.history .rightArrow,.group .rightArrow {
+	 margin-left: 429rpx; 
+	margin-right: 0;
+}
+.cartItem {
+	background-color: #fff;	
+	padding: 0 40rpx;
+}
+.cartItem:not(:last-child) {
+	margin-bottom: 20rpx;
+}
+.mainInfo {
+	height: 166rpx;
+	padding: 38rpx 0 36rpx;
+	box-sizing: border-box;
+	border-bottom: 2rpx solid #e5e5e5;
+}
+.avatar {
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 50%;
+	margin-right: 40rpx;
+}
+.name {
+	align-self: flex-start;
+	font-size: 32rpx;
+}
+.identity {
+	font-size: 20rpx;
+	color: #09bb07;
+	padding: 2rpx 10rpx;
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;  
+	margin-left: 10rpx;
+}
+.subInfo {
+	height: 70rpx;
+	font-size: 22rpx;
+	color: #b2b2b2;
+}
+.company {
+	margin-left: 50rpx;
+}
+.address image ,.company image,.addContact image{
+	margin-right: 10rpx;
+}
+.address image ,.company image{
+	width: 30rpx;
+	height: 34rpx;
+}
+.watched image {
+	width: 24rpx;
+	height: 14rpx;
+	margin-right: 10rpx;
+	margin-left: 10rpx;
+}
+.like image {
+	width: 24rpx;
+	height: 24rpx;
+	margin: -2rpx 10rpx 0 20rpx;
+}
+.lookTimes {
+	justify-content: flex-end;
+	height: 68rpx;
+	width: 710rpx;
+	margin: 0 auto;
+	border-radius: 0 0 10rpx 10rpx;
+	color: #b2b2b2;
+	font-size: 20rpx;
+}
+.look,.like {
+	text-align: center;
+  font-size: 20rpx;
+  color: #999;
+}
+.look {
+	margin-left: 50rpx;
+}
+.look image {
+	width: 24rpx;
+	height: 14rpx;
+	margin-right: 10rpx;
+}
+.like image {
+	width: 24rpx;
+	height: 24rpx;
+	margin-right: 10rpx;
+}
+
+
+.kefu{
+  width: 100%;
+  height: 88rpx;
+  background-color: #09BB07;
+  /* text-align: center; */
+  align-items: center;
+  vertical-align: middle;
+}
+button{
+  display: inline-block;
+  text-align: left;
+  background: #fff;
+  border: 0;
+  flex: 1;
+  position: relative;
+  line-height: 2.5;
+  padding: 0;
+  margin-left: -10rpx;
+}
+button::after{
+  border: 0;
+}
+.button-hover{
+  color: #000;
+  background: #fff;
+}
+.kefutext{
+  width: 100rpx;
+  font-size: 20rpx;
+  line-height: 30rpx;
+  position: fixed;
+  right: 30rpx;
+  bottom: 10rpx;
+  color: #09BB07;
+}
+
+.kefu view{
+  color: white;
+  font-size: 25rpx;
+}
+
+
+.guanzhu{
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+}

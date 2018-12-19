@@ -1,0 +1,373 @@
+page {
+	font-size: 32rpx;
+	padding-bottom: 70rpx;
+}
+.weui-cell__ft {
+  padding-right: 13px;
+  text-align: right;
+  color: #999999;
+  position: relative;
+}
+input {
+	font-size: 28rpx;
+	flex:1;
+  height: 1.8em;
+}
+.nameTel{
+  width: 520rpx;
+  margin-left: 40rpx;
+}
+.nameTel>view{
+  border-bottom: 0.5rpx solid #ddd;
+  padding: 10rpx 0;
+}
+icon {
+	display: block
+}
+.row {
+  display: flex;
+  flex-direction: row;
+	align-items: center;
+  flex-wrap: wrap;
+}
+.choosedImg {
+	width:200rpx;
+	height: 200rpx;
+	margin-bottom: 30rpx;
+	margin-right: 10rpx;
+}
+
+.header {
+	background: #fff;
+	padding: 30rpx 20rpx;
+}
+/*.row > view {
+	margin-top: 10rpx;
+}*/
+.mainInfo image, .wechat_img image, .logo_img image{
+	width: 150rpx;
+	height: 150rpx;
+}
+.getValidCode {
+	border-radius: 8rpx;
+	color: #fff;
+	background: #09bb07;
+	padding: 12rpx 28rpx;
+	font-size: 20rpx;
+	opacity: 0.2;
+}
+.tel .active {
+	opacity: 1
+}
+.code{
+  font-size: 28rpx;
+}
+.important:after {
+	content: '*';
+	display: inline-block;
+	color: #f03838;
+	font-size: 28rpx;
+	line-height: 40rpx;
+}
+.valid input {
+	margin-left: 30rpx;
+}
+/*基本信息*/
+.baseInfo ,.entrepreneur,.isPublic,.entreMore,.serviceMore,.otherMore,.info_com{
+	background-color: #fff;
+	padding: 20rpx;
+}
+.baseInfo input, .info_com input, .business_card{
+  padding-left: 30rpx;
+}
+.baseInfo>view, .entrepreneurship>view:nth-child(1), .info_com>view, .entreMore>view{
+  border-bottom: 1rpx solid #ddd;
+  line-height: 1.8rem;
+}
+.photoTitle {
+	margin-top: 20rpx;
+  line-height: 44rpx;
+}
+.baseInfo>view,.invertor>view ,.space > view ,.service > view,.entreMore > view , .serviceMore > view ,.otherMore > view, .entrepreneurship>view, .info_com>view{
+  padding: 10rpx 0;
+}
+.entrepreneurship{
+  padding: 0;
+}
+.baseInfoTitle ,.entrepreneurTitle,.entreMoreTitle,.invertorTitle,.serviceMoreTitle,.otherMoreTitle,.spaceTitle,.serviceTitle{
+	height: 44rpx;
+	font-size: 24rpx;
+	color: #8E8E93;
+	line-height: 44rpx;
+	box-sizing: border-box;
+	background-color: #f0f0f6;
+	padding-left: 20rpx;
+	/* position: relative; */
+}
+.entreMoreTitle,.serviceMoreTitle,.otherMoreTitle {
+	color: #3bb5f4;
+}
+.pullDownBtn image{
+	width: 20rpx;
+	height: 12rpx;
+	margin-left: 10rpx;
+	transform: rotate(180deg)
+}
+.entreMoreTitle .active,.serviceMoreTitle .active,.otherMoreTitle .active {
+	transform: rotate(0deg)
+} 
+.entrepreneurTitle:before,.invertorTitle:before,.spaceTitle:before,.serviceTitle:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 11rpx solid transparent;
+	border-right: 11rpx solid transparent;
+	border-bottom: 14rpx solid #f0f0f6;
+	top: -14rpx;
+	left: 60rpx;
+}
+.invertorTitle:before {
+	left: 202rpx;
+} 
+.spaceTitle:before {
+	left: 344rpx;
+} 
+.serviceTitle:before {
+	left: 462rpx;
+}
+.invertor .investorArea, .invertor .invest{
+  border-bottom: 1rpx solid #ddd;
+}
+ .chooseAddr ,.chooseDomain ,.chooseFile ,.chooseRes ,.chooseFinance,.chooseInvest,.chooseService{
+	padding-left: 20rpx;
+	font-size: 28rpx;
+	color: #b2b2b2;
+	/* margin-left: 40rpx; */
+} 
+.detailAddr image {
+	width: 30rpx;
+	height: 36rpx;
+}
+.identityList {
+	margin-top: 20rpx;
+	font-size: 24rpx;
+	color: #666;
+}
+.identityList .row:not(:first-child) {
+	margin-left: 20rpx;
+}
+.identityList icon ,.unSelectedIcon ,.isPublic icon{
+	margin-right: 10rpx;
+}
+.business_card_yes, .business_card_no{
+  height: 40rpx;
+  /* padding-right: 30rpx; */
+}
+.unSelectedIcon {
+	width: 40rpx;
+	height: 40rpx;
+	border-radius: 50%;
+	border: 2rpx solid #b2b2b2;
+	box-sizing:border-box;
+}
+/*创业者简介*/
+.entrepreneurDesc textarea,.introduce textarea,.spaceDesc textarea ,.serviceDesc textarea {
+	width: 100%;
+	height: 100rpx;
+	border: 2rpx solid #f0f0f6;
+	box-sizing: border-box;
+	border-radius: 4rpx;
+	font-size: 28rpx;
+  line-height: 30rpx;
+  position: static;
+}
+/*是否公开*/
+.isPublic {
+	border-top: 2rpx solid #f0f0f6;
+}
+.isPublic > .row{
+	margin-left: 158rpx;
+	margin-top: 20rpx;
+}
+.isPublic > .row .row{
+	margin-right: 40rpx;
+}
+
+.introduce {
+	border: 2rpx solid #f0f0f6;
+	width: 670rpx;
+	box-sizing: border-box;
+}
+.intrTitle, .photoTitle {
+	height: 44rpx;
+	line-height: 44rpx;
+	box-sizing: border-box;
+	padding-left: 20rpx;
+	background-color: #f0f0f6;
+	font-size: 24rpx;
+}
+.introduce textarea {
+	border: transparent;
+}
+.choosePhoto {
+	width: 200rpx;
+	height: 200rpx;
+	margin-bottom: 30rpx;
+}
+.save,.cancel {
+	margin: 30rpx auto 0;
+	width: 690rpx;
+	height: 84rpx;
+	border-radius: 8rpx;
+	text-align: center;
+	line-height: 84rpx;
+	background-color: #1aad19;
+	color: #fff;
+	border: 1px solid #09BB07;
+	box-sizing: border-box;
+}
+.cancel {
+	color: #1aad19;
+	background-color: #fff;
+}
+/*城市选择*/
+.modal{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 500;
+  bottom: 0;
+}
+.address picker{
+  flex: 1;
+}
+
+.citypicker{
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+}
+.citybody {
+  position: fixed;
+  bottom: 0px;
+}
+
+.cityheader {
+  position: absolute;
+  top:0px;
+  width: 100%;
+  z-index: 1000;
+  background: #fafbfa;
+  border-bottom: 2rpx solid #dfdfdf;
+}
+
+.city-cancel {
+  float: left;
+  margin: 20rpx;
+  color: #818181;
+}
+
+.city-true {
+  float: right;
+  margin: 20rpx;
+  color: #2FB42E
+}
+.entreMore input{
+  padding-left: 20rpx;
+}
+.wechat_img .avatar, .logo_img .avatar{
+  flex: 1;
+  padding-left: 50rpx;
+  height: 150rpx;
+}
+.wechat_img .add, .logo_img .add{
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+picker-view-column {
+	background: #fff;
+}
+.section .picker {
+  background-color: #fff;
+  border-bottom: 1px #d9d9d9 solid;
+  border-top: 1px #d9d9d9 solid;
+  padding: 20rpx;
+}
+.area ,.resources ,.finance,.serve{
+	position: fixed;
+	bottom: 0;
+	z-index: 1500;
+	background-color: #fff;
+	width: 100%;
+}
+.area .head,.resources .head,.finance .head,.serve .head{
+	padding: 0 30rpx ;
+	width: 100%;
+	box-sizing:border-box;
+	background-color: #fafbfa;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 30rpx;
+	border-bottom: 2rpx solid #b2b2b2;
+	height: 80rpx;
+}
+.confirm {
+	color: #09BB07;
+}
+.chooseArea ,.chooseResource ,.chooseFina,.chooseServ{
+	padding: 32rpx 34rpx 0; 
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  background: #fff;
+}
+.chooseResource,.chooseServ  {
+	padding: 26rpx 10rpx 0;
+}
+.chooseArea view ,.chooseResource view,.chooseFina view,.chooseServ view{
+	width: 148rpx;
+	height: 60rpx;
+	text-align: center;
+	line-height: 60rpx;
+	border: 2rpx solid #b2b2b2;
+	border-radius: 6rpx;
+	color: #b2b2b2;
+	margin-bottom: 30rpx;
+	font-size: 26rpx;
+}
+.chooseResource view ,.chooseServ view{
+	width: 228rpx;
+	margin-bottom: 24rpx;
+	box-sizing:border-box;
+}
+.chooseArea view.active ,.chooseResource view.active,.chooseFina view.active,.chooseServ view.active{
+	background-color: #09BB07;
+	color: #fff;
+	border: 2rpx solid #09BB07;
+}
+.photoArea view{
+	position: relative;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  margin-bottom: 20rpx;
+}
+.photoArea .delete {
+	width: 200rpx;
+  background: rgba(0,0,0,0.1);
+	height: 50rpx;
+	position: absolute;
+	top: 200rpx;
+	left: 0rpx;
+  text-align: center;
+}
+.delete image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+  vertical-align: middle
+}

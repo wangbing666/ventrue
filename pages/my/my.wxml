@@ -1,0 +1,104 @@
+<view>
+	<view class="header">
+		<view class="unLogin row" wx:if="{{card.length == 0}}">
+			<image src="../res/img/unCreated.png"></image>
+			<view>
+				<view>您还没有名片哦</view>
+				<view class="createCard" bindtap="goEdit">立刻创建</view>
+			</view>
+		</view>
+		<view class="cartItem" wx:if="{{card.length >= 0}}" wx:for="{{card}}">
+			<view class="pending row" wx:if="{{backCard && backCard.length > 0}}" bindtap="goContact">
+				<view>您有待处理的回传名片</view>
+				<image src="../res/img/rightArr.png"></image>
+			</view>
+			<image bindtap="createMiniImg" class="wxCode" src="../res/img/wxCode.png"></image>
+			<view class="mainInfo row">
+				<image src="{{item.bcPhoto}}" mode="aspectFill" class="avatar"></image>
+				<view class="name">
+          <view class="row">
+            <text>{{item.bcName}}</text>
+				  	<text class="identity">{{item.identity == 0 ? '创业者' : (item.identity == 1 ? '投资者' : (item.identity == 2 ? '空间' : (item.identity == 3 ?'服务':'其他')))}}</text>
+          </view>
+          <view style="font-size:24rpx;margin-top:23rpx" class='row'>
+            <view>{{item.post}}</view>
+             <view class="look row" wx:if="{{card.length >= 0}}">
+                <image src="../res/img/look.png"></image>
+                <view>查看 {{item.popularity}}</view>
+              </view>
+              <view class="like row" wx:if="{{card.length >= 0}}">
+                <image src="../res/img/like.png"></image>
+                <view>收藏 {{item.collected}}</view>
+              </view>
+          </view>
+				</view>
+			</view>
+      <view class='my_classification row'>
+        <view class="classification_list" style="border-right: {{index == 6? 0 : ''}}" wx:for="{{classification}}" wx:key="index" wx:if="{{!item.hidden}}" bindtap='goOther' data-url='{{item.url}}'>
+          <image src="{{item.imgUrl}}"></image>
+          <view>{{item.label}}</view>
+        </view>
+      </view>
+		</view>
+	</view>
+
+	<view class="edit">
+		<view class="createBtn row" bindtap="goEdit">
+			<view>{{card.length == 0 ? '创建我的名片' : '编辑我的名片'}}</view>
+		</view>
+		<view class="generateImg row" bindtap="createShareImg">
+			<image src="../res/img/moments_active.png"></image>
+			<view style="color:#84888b">点我生成您的创投名片（图片版）</view>
+			<image src="../res/img/pullDownBtn.png" class="rightArrow"></image>
+		</view>
+	</view>
+	<view class="history">
+		<view class="readCard row" bindtap="goHistory">
+			<image src="../res/img/read.png"></image>
+			<view>看过的名片</view>
+			<image src="../res/img/pullDownBtn.png" class="rightArrow"></image>
+		</view>
+		<view class="myCard row" bindtap="goInvoice">
+			<image src="../res/img/fapiao.png"></image>
+			<view>发票名片</view>
+			<image src="../res/img/pullDownBtn.png" class="rightArrow" style="margin-left:459rpx;"></image>
+		</view>
+
+    <view class="readCard row"bindtap="goFile">
+    	<image src="../res/img/file.png"></image>
+		  <view>我的文件</view>
+		  <image src="../res/img/pullDownBtn.png" class="rightArrow" style="margin-left:459rpx;"></image>
+    </view>
+	</view>
+	<view class="history" >
+    <view class="readCard row"bindtap="showDevelopment">
+    	<image src="/image/my/lianjie.png" style='height:44rpx;'></image>
+		  <view>技术开发</view>
+		  <image src="../res/img/pullDownBtn.png" class="rightArrow" style="margin-left:459rpx;"></image>
+    </view>
+    <!-- <view class="readCard row"bindtap="showGroup">
+    	<image src="/image/my/touzi.png" style='height:44rpx;'></image>
+		  <view>投资我们</view>
+		  <image src="../res/img/pullDownBtn.png" class="rightArrow"></image>
+    </view> -->
+     <view class="myCard row" > 
+		  <image src="/image/my/hongbao.png" style='width: 50rpx;height:50rpx;'></image>
+      <button open-type="contact">反馈bug赠大红包</button>
+     </view> 
+	</view>
+  	
+</view>
+
+
+
+
+
+<!-- <button class="kefu"  open-type="contact"> -->
+ <!-- <image src="../res/img/kefu2.png" ></image> -->
+<!-- </button> -->
+
+
+
+
+
+<image class='guanzhu' wx:if="{{showGuanzhu}}" bindtap="hideGuanzhu" src="../res/img/follow.png" ></image>

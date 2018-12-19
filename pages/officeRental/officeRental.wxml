@@ -1,0 +1,15 @@
+<!--pages/officeRental/officeRental.wxml-->
+<view class="office_rental">
+  <scroll-view  class="cardList" scroll-y="true" style="height: 1180rpx;" bindscrolltolower="loadMore" lower-threshold="30" wx:if="{{officeList.length !== 0}}">
+    <view class="flex-wrp" style="flex-direction:column;" wx:for="{{officeList}}" wx:key="index">
+      <view class="flex-item flex-item-V demo-text-1">
+        <image src="{{item.url}}" bindtap='officeDetail' data-id='{{item.id}}'></image>
+        <view class='row'>
+          <view class='office_rental_title'>{{item.addressName}}</view>
+          <view class='office_rental_price'><text>{{item.price}}</text>/月</view>
+        </view>
+        <view class='office_rental_address'><image src="../res/img/location.png"></image>{{item.address}} <button open-type="share"><image src="../res/img/zhuanfa.png" class='share'></image></button> </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

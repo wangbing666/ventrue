@@ -1,0 +1,115 @@
+/* pages/my/joinVIP/joinVIP.wxss */
+.joinVIP{
+  font-size: 36rpx;
+  color: #333;
+}
+.user{
+  background: #fff;
+  padding: 20rpx;
+}
+.user_avatarUrl image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+}
+.user_info{
+  padding-left: 30rpx;
+}
+.user_name image{
+  width: 40rpx;
+  height: 40rpx;
+  padding-left: 10rpx;
+}
+.joinVIP_list{
+  margin-top: 20rpx;
+  background: #fff;
+  padding: 20rpx;
+}
+.equities_grade{
+  border: 2rpx solid red;
+  padding: 20rpx 100rpx;
+  font-size: 28rpx;
+  color: #f1c686;
+}
+.joinVIP_item{
+  border-bottom: 2rpx solid #ddd;
+}
+.logo image{
+  width: 100rpx;
+  height: 150rpx;
+}
+.vip_content{
+  font-size: 36rpx;
+  color: #666;
+  padding: 20rpx;
+  position: relative;
+}
+.vip_name text{
+  color: #f90;
+}
+.equities{
+  color: #566cba;
+  font-size: 20rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 75rpx;
+}
+.joinVIP_radio{
+  flex: 1;
+  text-align: right;
+}
+.total{
+  margin-top: 60rpx;
+}
+.total text{
+  color: #f90;
+  padding: 0 20rpx;
+}
+.wechat_apply{
+  padding: 20rpx;
+}
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+.limitTips {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2000;
+	background-color: #fff;
+	width: 602rpx;
+	border-radius: 10rpx;
+}
+.tipsTitle {
+	padding: 30rpx 0rpx;
+	margin: 0 60rpx;
+	width: 482rpx;
+	border-bottom: 4rpx solid #e5e5e5;
+	font-size: 36rpx;
+	color: #333;
+	text-align: center;
+}
+.tipsContent {
+	padding: 20rpx 60rpx;
+	color: #333;
+	font-size: 26rpx;
+	line-height: 46rpx;
+}
+.tipsBtn {
+	height: 94rpx;
+	text-align: center;
+	line-height: 94rpx;
+	color: #fff;
+	font-size: 36rpx;
+}
+.close{
+  width: 100%;
+  background: #ccc;
+}

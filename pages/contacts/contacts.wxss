@@ -1,0 +1,208 @@
+.header {
+	height: 90rpx;
+	justify-content: space-between;
+	font-size: 24rpx;
+	background-color: #fff;
+	color: #b2b2b2;
+}
+.header .row {
+	flex:1;
+	justify-content: center;
+	height: 42rpx;
+}
+.order:first-child {
+	border-right: 2rpx solid #b2b2b2;
+}
+.header image {
+	width: 28rpx;
+	height: 28rpx;
+	margin-right:10rpx;
+}
+.title {
+	height: 44rpx;
+	padding-left: 20rpx;
+	background-color: #f0f0f6;
+	font-size: 28rpx;
+	color: #8e8393;
+}
+.orderItem {
+	height: 120rpx;
+	padding: 0 48rpx 0 40rpx;
+	background-color: #fff;
+	justify-content: space-between;
+	border-bottom: 2rpx solid rgba(229,229,229,0.3)
+}
+.avatar image{
+	width: 78rpx;
+	height: 78rpx;
+	border-radius: 4rpx;
+	margin-right: 20rpx;
+}
+.tel {
+	width: 44rpx;
+	height: 44rpx;
+}
+.uname {
+	font-size: 34rpx;
+	color: #000;
+  margin-bottom: 10rpx;
+}
+.company {
+	font-size: 28rpx;
+	color: #b2b2b2;
+}
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+.limitTips {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 200;
+	background-color: #fff;
+	width: 602rpx;
+	border-radius: 10rpx;
+}
+.tipsTitle {
+	padding: 30rpx 0rpx;
+	margin: 0 60rpx;
+	width: 482rpx;
+	border-bottom: 4rpx solid #e5e5e5;
+	font-size: 36rpx;
+	color: #333;
+	text-align: center;
+}
+.tipsContent {
+	padding: 20rpx 60rpx;
+	color: #333;
+	font-size: 28rpx;
+	line-height: 46rpx;
+}
+.tipsBtn {
+	height: 94rpx;
+	text-align: center;
+	background-color: #09bb07;
+	line-height: 94rpx;
+	color: #fff;
+	font-size: 36rpx;
+}
+.select {
+	position: fixed;
+	top: 90rpx;
+	z-index: 200;
+	background-color: #fff;
+	width: 100%;
+}
+.selectByName ,.selectByDate{
+	padding-left: 72rpx;
+	font-size: 32rpx;
+	color: #333;
+	height: 90rpx;
+}
+.selectByName > view:first-child,.selectByDate > view:first-child {
+	height: 40rpx;
+}
+.selectByName image, .selectByDate image {
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 20rpx;
+}
+.selectedBtn image{
+	width: 40rpx;
+	height: 26rpx;
+	margin-left: 274rpx;
+}
+.identity {
+	font-size: 20rpx;
+	color: #09bb07;
+	padding: 2rpx 10rpx;
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;  
+	margin-left: 10rpx;
+}
+.search {
+	padding: 0 50rpx;
+	font-size: 28rpx;
+}
+.searchArea {
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;
+  padding: 0 28rpx;
+	width: 478rpx;
+	height: 62rpx;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+.searchArea image {
+	width: 40rpx;
+	height: 40rpx;
+}
+.searchArea input {
+  margin-left: 28rpx;
+	font-size: 24rpx;
+	color: #333;
+}
+.confirmSearch {
+	margin: 0 40rpx 0 20rpx;
+	color: #09bb07;
+}
+.cancelSearch {
+	color: #b2b2b2;
+}
+.header {
+	border-bottom: 2rpx solid rgba(229,229,229,0.3)
+}
+.reDetail {
+	padding: 14rpx 0 22rpx 80rpx;
+	background: #fff;
+}
+.reDetail > view:first-child {
+	font-size: 20rpx;
+	color: #09bb07;
+	margin-bottom: 30rpx;
+}
+.reDetail image {
+	margin-right: 10rpx;
+	width: 72rpx;
+	height: 72rpx;
+}
+.uname .dark {
+  color: #b2b2b2 ;
+  border-color: #b2b2b2;
+}
+.screenshots{
+  color: #ddd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500rpx;
+  height: 500rpx;
+  font-size: 28rpx;
+  margin-left: -250rpx;
+  margin-top: -250rpx;
+  text-align: center;
+}
+.screenshots image{
+  margin-top: 30rpx;
+  width: 300rpx;
+  height: 300rpx;
+}
+button{
+  border-radius: 0;
+  line-height: 1.5;
+}
+button::after{
+  border: 0;
+}
+.button-hover{
+  color: #000;
+  background: #fff;
+}

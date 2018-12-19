@@ -1,0 +1,242 @@
+<!--editCard.wxml-->
+<view>
+  <dialog id='dialog' message='{{message}}'></dialog>
+  <!-- 头部 -->
+	<view class="header">
+		<view class="mainInfo row">
+			<view class="avatar" bindtap="chooseAvatar" id='avatar'>
+				<image src="{{avatar}}" mode="aspectFill"></image>
+			</view>
+			<view class="nameTel">
+				<view class="uname">
+					<input type="text" bindinput="inputName" placeholder="请输入姓名" placeholder-style="color:#b2b2b2" maxlength="10" value="{{uname}}"/>
+				</view>
+				<view class="tel row">
+					<input type="number" bindinput="inputMobile" placeholder="请输入手机号" placeholder-style="color:#b2b2b2" maxlength="11" value="{{businessCard.bcMobile}}"/>
+					<view class="getValidCode {{(count == 60 && validTel) ? 'active' : ''}}" bindtap="getValidCode">{{count!=60?'重新获取'+count+'s':'获取验证码'}}</view>
+				</view>
+        <view class="valid row" wx:if="{{validTel}}">
+          <view class="important code">验证码</view>
+          <input type="number" bindinput="inputCode" placeholder="请输入验证码" placeholder-style="color:#b2b2b2" maxlength="6" />
+        </view>
+			</view>
+		</view>
+    <view class="chooseIdentity">
+			<view class="identityList row">
+        <view class="important">身份</view>
+				<view class="row" wx:for="{{identity}}" bindtap="chooseIdentity" data-id="{{index}}">
+					<view>
+            <icon type="success" size="20" wx:if="{{index == businessCard.identity}}"/>
+          </view>
+					<view class="unSelectedIcon" wx:if="{{index != businessCard.identity}}"></view>
+					<view>{{item}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+  <!-- 基本信息 -->
+	<view class="baseInfoTitle">基本信息</view>
+	<view class="baseInfo">
+		<view class="company row">
+			<view class="important">公司</view>
+			<input type="text" bindinput="inputCompany" placeholder="4-16字(必填)" data-id="company" placeholder-style="color:#b2b2b2" maxlength="16" value="{{businessCard.company}}"/>
+		</view>
+		<view class="job row">
+			<view class="important">职务</view>
+			<input type="text"  bindinput="inputJob" data-id="job" placeholder="0~10字(必填)" placeholder-style="color:#b2b2b2" maxlength="10" value="{{businessCard.post}}"/>
+		</view>
+		<view class="wechat row">
+			<view class="important">微信</view>
+			<input type="text"  bindinput="inputWechat" data-id="wechat" placeholder="请输入微信(必填)" placeholder-style="color:#b2b2b2"  value="{{businessCard.wxNumber}}"/>
+		</view>
+    <!-- 创业者 -->
+    <view class="entrepreneurship" wx:if="{{ businessCard.identity == 0 }}">
+      <view class="investorArea row"  bindtap="chooseInvestArea">
+        <view>领域</view>
+        <view class="chooseRes"  wx:if="{{selectInvArea.length == 0}}">点击选择创业领域、可选1-3个标签'</view>
+        <view class="chooseRes" wx:if="{{selectInvArea.length>0}}" wx:for="{{selectInvArea}}" bindtap="chooseInvestArea">{{item}}</view>
+      </view>
+      <view class="domain row">
+        <view class="">BP上传</view>
+        <view class="chooseDomain flex" bindtap="uploadBP">点击上传BP，获得相关投资人约见机会</view>
+        <view class="navigator-arrow"></view>
+      </view>
+    </view>
+    <!-- 投资人 -->
+    <view class="invertor" wx:if="{{ businessCard.identity == 1 }}">
+      <view class="investorArea row">
+        <view class="important">投资领域</view>
+        <view class="chooseRes" bindtap="chooseInvestArea" wx:if="{{selectInvArea.length == 0}}">点击选择</view>
+        <view class="chooseRes" wx:if="{{selectInvArea.length>0}}" wx:for="{{selectInvArea}}" bindtap="chooseInvestArea">{{item}}</view>
+      </view>
+      <view class="invest row">
+        <view class="important">投资阶段</view>
+        <view class="chooseInvest" bindtap="showInvertFina" wx:if="{{selectInvFinance.length == 0}}">点击选择</view>
+        <view class="chooseRes" bindtap="showInvertFina" wx:if="{{selectInvFinance.length>0}}" wx:for="{{selectInvFinance}}">{{item}}</view>
+      </view>
+      <view class="investorCase row">
+        <view>投资案例</view>
+        <input type="text" bindinput="inputInvestorCase" placeholder="若无则填'无'" placeholder-style="color:#b2b2b2" value="{{businessCard.investmentCase}}"/>
+      </view>
+    </view>
+    <!-- 服务 -->
+     <view class="service" wx:if="{{ businessCard.identity == 3 }}">
+      <view class="serviceType row">
+        <view class="important">服务</view>
+        <view class="chooseRes" bindtap="showService" wx:if="{{selectedService.length == 0}}">点击选择</view>
+        <view  class="chooseRes" bindtap="showService" wx:if="{{selectedService.length > 0}}" wx:for="{{selectedService}}">{{item}}</view>
+      </view>
+    </view> 
+		
+		
+		
+	</view>
+
+	<view class="spaceTitle"></view> 
+  <view class='info_com'>
+    <view class="address row">
+			<view>城市</view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+        <view class="chooseAddr">
+          {{region[0]}} {{region[1]}} {{region[2]}}
+        </view>
+      </picker>
+		</view>
+    <view class="detailAddr row" bindtap="chooseAddr">
+			<image src="../res/img/locate.png" bindtap="chooseAddr"></image>
+			<view class="chooseRes">{{businessCard.address || '点击选择'}}       </view>
+		</view> 
+    <view class="email row">
+      <view>电子邮箱</view>
+      <input type="text" bindinput="inputEmail" placeholder="邮箱地址" placeholder-style="#b2b2b2" value="{{businessCard.email}}"/>
+    </view>
+    <view class="entrepreneurDesc">
+      <view>备注</view>
+      <textarea disabled="{{showModal}}" bindinput="inputEntrep" placeholder="100字以内,可不填" placeholder-sytle="color:#666" value="{{businessCard.projectBrief}}"/>
+    </view> 
+    <view class="row">
+      <view>名片公开</view>
+			<view class="business_card row" bindtap="isPublic"  data-id="1">
+				<view class='business_card_yes'><icon type="success" size="20" wx:if="{{businessCard.isOpen=='1'}}"/></view>
+				<view class="unSelectedIcon" wx:if="{{businessCard.isOpen=='0'}}"></view>
+				<view>是</view>
+			</view>
+			<view class="business_card row" bindtap="isPublic" data-id="0">				
+				<view class='business_card_no'><icon type="success" size="20" wx:if="{{businessCard.isOpen=='0'}}"/></view>
+				<view class="unSelectedIcon" wx:if="{{businessCard.isOpen=='1'}}"></view>
+				<view>否</view>
+			</view>
+		</view> 
+  </view>
+
+	<view bindtap="changeShowMore" class="entreMoreTitle row">
+		<view>更多信息</view>
+		<view class="pullDownBtn"> 
+			<image class="{{ showMore? 'active' : '' }}" src="../res/img/pullDown.png"></image>
+		</view>
+	</view>
+	<view class="entreMore" wx:if="{{showMore}}">
+		<view class="telephone row">
+			<view>固定电话</view>
+			<input type="text" value="{{businessCard.landlineNumber}}" bindinput="inputTelephone" placeholder-style="color:#b2b2b2" />
+		</view>
+    <view class="fax row">
+			<view>传真号码</view>
+			<input type="text" value="{{businessCard.faxNumber}}" bindinput="inputFax"  placeholder-style="color:#b2b2b2"/>
+		</view>
+		<view class="url row">
+			<view>公司网址</view>
+			<input type="text" value="{{businessCard.webSite}}" bindinput="inputUrl"  placeholder-style="color:#b2b2b2"/>
+		</view>
+    <view class='wechat_img row'>
+      <view>微信二维码</view>
+      <view class="avatar" bindtap="chooseAvatar" id='wechatImg'>
+        <image src="../res/img/addPhoto.png" mode="aspectFill" class='add' wx:if="{{!wxQrCode}}"></image>
+				<image src="{{wxQrCode}}" wx:if="{{wxQrCode}}" mode="aspectFill"></image>
+		  </view>
+    </view>
+    <view class='logo_img row'>
+      <view>公司LOGO</view>
+      <view class="avatar" bindtap="chooseAvatar" id='companyLogo'>
+        <image src="../res/img/addPhoto.png" mode="aspectFill" class='add' wx:if="{{!companyLogo}}"></image>
+				<image src="{{companyLogo}}" wx:if="{{companyLogo}}" mode="aspectFill"></image>
+		  </view>
+    </view>
+		<view class="photoTitle" style='line-height:44rpx;padding:0;'>相册(可上传jpg.png格式图片)</view>
+		<view class="photoArea row">
+			<view wx:for="{{imgUrls}}" >
+				<image bindtap="previewImg" class="choosedImg" src="{{item}}" wx:if="{{imgUrls[0] != ''}}" aspectFill data-id="{{item}}"></image>
+				<view class="delete" bindtap="deleteImg" data-id="{{index}}">
+          <image src="../res/img/delete.png"></image>
+        </view>
+			</view>
+			<image class="choosePhoto" src="../res/img/addPhoto.png" bindtap="chooseImg"></image>
+		</view>
+	</view>
+	<view class="save" bindtap="save">保存</view>
+	<view class="cancel" bindtap="cancel">取消</view>
+	<view wx:if="{{condition}}" class="citypicker">
+	  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange" class="citybody">
+	    <view class="cityheader">
+	      <view bindtap="resetCity" class="city-cancel">重置</view>
+	      <view bindtap="open" class="city-true">确定</view>
+	    </view>
+	    <picker-view-column>
+	      <view wx:for="{{provinces}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+	    </picker-view-column>
+	    <picker-view-column>
+	      <view wx:for="{{citys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+	    </picker-view-column>
+	    <picker-view-column>
+	      <view wx:for="{{countys}}" wx:key="item" style="line-height: 50px;padding-left:10px;">{{item}}</view>
+	    </picker-view-column>
+	  </picker-view>
+	</view>
+</view>
+ <view class="modal" wx:if="{{showModal}}" bindtouchstart="closeModal"></view>
+<view class="area" wx:if="{{showInvertArea}}">
+	<view class="head">
+		<view bindtap="resetInvertArea">清空</view>
+		<view class="confirm" bindtap="closeModal">确定</view>
+	</view>
+	<view class="chooseArea">
+		<view class="{{invArea[index] == item && 'active'}}" wx:for="{{area}}" bindtap="chooseInvertorArea" data-id="{{index}}">{{item}}</view>
+		<view style="visibility: hidden;"></view>
+	</view>
+</view>
+<view class="resources" wx:if="{{showResource}}">
+	<view class="head">
+		<view bindtap="resetRes">清空</view>
+		<view class="confirm"  bindtap="closeModal">确定</view>
+	</view>
+	<view class="chooseResource">
+		<view class="{{invRes[index] == item && 'active'}}" wx:for="{{resource}}" bindtap="chooseResource" data-id="{{index}}">{{item}}</view>
+	</view>
+</view>
+<view class="finance" wx:if="{{showFinance}}">
+	<view class="head">
+		<view bindtap="resetFinance">清空</view>
+		<view class="confirm" bindtap="closeModal">确定</view>
+	</view>
+	<view class="chooseFina">
+		<view class="{{entreFinId == index && 'active'}}" wx:for="{{finance}}" bindtap="chooseFina" data-id="{{index}}">{{item}}</view>
+	</view>
+</view>
+<view class="finance" wx:if="{{showInvertFinance}}">
+	<view class="head">
+		<view bindtap="resetInvertFinance">清空</view>
+		<view class="confirm" bindtap="closeModal">确定</view>
+	</view>
+	<view class="chooseFina">
+		<view class="{{invFinance[index] == item && 'active'}}" wx:for="{{finance}}" bindtap="chooseInvertFina" data-id="{{index}}">{{item}}</view>
+	</view>
+</view>
+<view class="serve" wx:if="{{showService}}">
+	<view class="head">
+		<view bindtap="resetService">清空</view>
+		<view class="confirm" bindtap="closeModal">确定</view>
+	</view>
+	<view class="chooseServ">
+		<view class="{{selectService[index] == item && 'active'}}" wx:for="{{service}}" bindtap="chooseService" data-id="{{index}}">{{item}}</view>
+	</view>
+</view> 

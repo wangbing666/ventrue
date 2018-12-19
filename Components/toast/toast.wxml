@@ -1,0 +1,7 @@
+<!--Components/toast/toast.wxml-->
+<view class='wx_dialog_container' hidden="{{!isShow}}">
+    <view class='wx-mask'></view>
+    <view class='wx-dialog'>
+        {{ message }}
+    </view>
+</view>

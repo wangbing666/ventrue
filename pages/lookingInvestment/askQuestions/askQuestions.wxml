@@ -1,0 +1,48 @@
+<!--pages/lookingInvestment/askQuestions/askQuestions.wxml-->
+<view class='askQuestions'>
+  <view class='askQuestions_header'>{{name}}</view>
+  <form catchsubmit="formSubmit">
+    <view class='askQuestions_content'>
+      <textarea name="message" auto-height placeholder='向{{name}}递交BP或文字描述问题，等待快速反馈。可截图多图上传，也可选择已上传文件。15天无反馈自动退款。' placeholder-style='color:#ccc;'></textarea>
+    </view>
+    <view class='askQuestions_private row'>
+      <view class='private_prompt'>私密提交加 <text>10元</text></view>
+      <view class='private_switch'>
+        <switch bindchange="switchChange" name="openness"/>
+        <text>{{private}}</text>
+      </view>
+    </view>
+    <view class='askQuestions_upload row'>
+        <view class='upload_img'>
+          <image src="/image/lookingInvestment/uploadImg.jpg" bindtap="chooseImage"></image>
+        </view>
+        <view class='upload_bp'>
+          <image src="/image/lookingInvestment/uploadBP.jpg" bindtap='navigatorBP'></image>
+          <view>可在我-我的文件中上传BP</view>
+        </view>
+    </view>
+    <view class="weui-uploader askQuestions_img" wx:if="{{imageList.length != 0}}">
+      <view class="weui-uploader__hd">
+        <view class="weui-uploader__title">点击可预览选好的图片</view>
+        <view class="weui-uploader__info">{{imageList.length}}/9</view>
+      </view>
+      <view class="weui-uploader__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{imageList}}" wx:key="index" wx:for-item="image">
+            <view class="weui-uploader__file">
+              <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class='pay_askQuestions'>
+      <button size="default" type="primary" formType="submit" loading="{{loading}}">支付￥{{price}}元提问</button>
+    </view>
+  </form>
+  <dialog id='dialog' message='{{message}}'></dialog>
+</view>
+
+
+
+

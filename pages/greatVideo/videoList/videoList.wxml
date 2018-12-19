@@ -1,0 +1,13 @@
+<!--pages/greatVideo/videList/videoList.wxml-->
+<view class="video_list">
+  <scroll-view  scroll-y="true" style="height: 1180rpx;" bindscrolltolower="loadMore" lower-threshold="30" wx:if="{{videoList.length !== 0}}">
+    <view class="flex-wrp" wx:for="{{videoList}}" wx:key="index" bindtap='playVideo'  data-value="{{item}}">
+      <view class="flex-item">
+        <image src="{{item.pictureUrl}}"></image>
+        <view class='video_list_title'>{{item.videoTitle}}</view>
+        <view class='video_list_detail'>{{item.content}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+

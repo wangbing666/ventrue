@@ -1,0 +1,34 @@
+/* ctgroup.wxss */
+page{
+  background-color: #F2F2F2;
+}
+
+.head,.body{
+  text-align: center;
+  color: #4DD04D;
+  display: flex;
+  flex-direction: column;
+}
+
+.title1{
+  font-weight: bold;
+  margin-top: 50rpx;
+}
+
+.title2{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+
+.title3{
+  color: black;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+}
+
+
+.ingroup{
+  margin-top: 60rpx;
+  width: 750rpx;
+  height: 563rpx;
+}

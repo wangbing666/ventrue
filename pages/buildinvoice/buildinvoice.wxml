@@ -1,0 +1,73 @@
+<view class="topchoose">
+    <view class="choose {{type==0 ?'active':''}}" bindtap='selectType' data-id="0">
+        <text class="text">企业发票</text>
+    </view>
+    <view class="unchoose {{type==1 ?'active':''}}" bindtap='selectType' data-id="1">
+        <text class="text">个人发票</text>
+    </view>
+</view>
+<view class="personInfo" wx:if="{{type == 1}}">
+    <view class="row">
+        <view class="important">姓名</view>
+        <input type="text" bindinput="inputName" data-id="" placeholder="请输入姓名" placeholder-style="color:#b2b2b2" value="{{invoiceCard.name}}" />
+    </view>
+    <view class="row">
+        <view>手机号</view>
+        <input type="text" bindinput="inputTel" data-id="" placeholder="请输入手机号" placeholder-style="color:#b2b2b2" value="{{invoiceCard.tel}}" />
+    </view>
+    <view class="row">
+        <view class="">邮箱</view>
+        <input type="text" bindinput="inputMailbox" data-id="" placeholder="请输入邮箱" placeholder-style="color:#b2b2b2" value="{{invoiceCard.mailbox}}" />
+    </view>
+</view>
+<view class="companyinfo" wx:if="{{type == 0}}">
+    <view class="row">
+        <view class="important">公司名称</view>
+        <input type="text" bindinput="inputCompanyName" data-id="" placeholder="请输入公司名称" placeholder-style="color:#b2b2b2" value="{{invoiceCard.companyName}}" />
+    </view>
+    <view class="row">
+        <view class="important">公司税号</view>
+        <input type="text" bindinput="inputCompanyTaxNum" data-id="" placeholder="请输入15~20位公司税号" placeholder-style="color:#b2b2b2" value="{{invoiceCard.companyTaxNum}}" />
+    </view>
+    <view class="row">
+        <view class="">公司地址</view>
+        <input type="text" bindinput="inputAddress" data-id="" placeholder="请输入公司地址" placeholder-style="color:#b2b2b2" value="{{invoiceCard.address}}" />
+    </view>
+    <view class="row">
+        <view class="">公司电话</view>
+        <input type="text" bindinput="inputTel" data-id="" placeholder="请输入公司电话" placeholder-style="color:#b2b2b2" value="{{invoiceCard.tel}}" />
+    </view>
+    <view class="row">
+        <view class="">开户银行</view>
+        <input type="text" bindinput="inputBankName" data-id="" placeholder="请输入开户银行" placeholder-style="color:#b2b2b2" value="{{invoiceCard.bankName}}" />
+    </view>
+    <view class="row">
+        <view class="">银行账号</view>
+        <input type="text" bindinput="inputBankAccount" data-id="" placeholder="请输入银行账号" placeholder-style="color:#b2b2b2" value="{{invoiceCard.bankAccount}}" />
+    </view>
+</view>
+<view class="address">
+    <view class="topchoose tips">
+        <text>邮寄信息</text>
+    </view>
+    <view class="row">
+        <view class="">邮寄地址</view>
+        <input type="text" bindinput="inputMailingAddress" data-id="" placeholder="请输入邮寄地址" placeholder-style="color:#b2b2b2" value="{{invoiceCard.mailingAddress}}" />
+    </view>
+    <view class="row">
+        <view class="">联系电话</view>
+        <input type="text" bindinput="inputMobile" data-id="" placeholder="请输入联系电话" placeholder-style="color:#b2b2b2" maxlength="11" value="{{invoiceCard.mobile}}" />
+    </view>
+    <view class="row">
+        <view class="">联系人员</view>
+        <input type="text" bindinput="inputContactName" data-id="" placeholder="请输入联系人员姓名" placeholder-style="color:#b2b2b2" value="{{invoiceCard.contactName}}" />
+    </view>
+</view>
+<view class="savecancel">
+    <view class="save" bindtap="saveInvoice">
+        <text>保存</text>
+    </view>
+    <view class="cancel" bindinput="cancelSave">
+        <text>取消</text>
+    </view>
+</view>

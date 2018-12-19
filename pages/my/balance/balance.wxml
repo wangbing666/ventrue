@@ -1,0 +1,26 @@
+<!--pages/my/balance/balance.wxml-->
+<view class='balance'>
+  <view class='balance_info'>
+    <image src="/image/my/yue.png"></image>
+    <view class='my_balance_msg'>我的余额</view>
+    <view class='my_balance'>￥{{card.user.overage}}</view>
+  </view>
+  <view class='balance_operation'>
+    <button type="primary" size="default" loading="{{loading}}"  bindtap="bindApply">充值</button>
+    <!-- <button type="default" size="default" loading="{{loading}}"  bindtap="primary">提现</button> -->
+    <button type="default" size="default"  bindtap="detail">明细</button>
+  </view>
+</view>
+<view class="modal" bindtouchstart="closeModal" wx:if="{{showModal}}" style="z-index:{{showTips? '1500':'100'}}"></view>
+<view class="limitTips" wx:if="{{showTips}}">
+	<view class="tipsTitle"><text>充值余额</text></view>
+	<view class="tipsContent row">
+    <input type="digit" bindinput="inputBalance"></input>
+    <view>元</view>
+  </view>
+	<view class="tipsBtn row">
+      <view class='close' bindtap="closeModal">取消</view>
+      <view class='membership' bindtap="bindConfirm">确定</view>
+  </view>
+</view>
+

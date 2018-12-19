@@ -1,0 +1,32 @@
+<!--pages/development/development-confirm/development-confirm.wxml-->
+<view class='development-confirm'>
+  <view class='contact'>
+    <view class='contact_title'>联系方式</view>
+    <view class='contact_card'>
+      <view class='contact_name'>{{bcName}}</view>
+      <view class='contact_phone row'>
+        <view>手机</view>
+        <view class='contact_phone_tel'>{{tel}}</view>
+      </view>
+      <view class='contact_company row'>
+        <view>公司</view>
+        <view>{{company}}</view>
+      </view>
+      <view class='contact_wechat row'>
+        <view>微信</view>
+        <view>{{wechat}}</view>
+      </view>
+      <view class='contact_imgurl'>
+        <image src='{{imgurl}}'></image>
+      </view>
+    </view>
+    <view class='contact_title'>需求详情</view>
+  </view>
+  <view class='demand_detail'>
+    <textarea placeholder='详细介绍您的项目距需求，有助于开发商提供更准确的项目方案' bindinput='detailsInput' placeholder-style='#ccc' value="{{details}}"></textarea>
+  </view>
+  <view class='bth_confirm'>
+    <button type="primary" class='next' bindtap="development" loading="{{loading}}">确认提交</button>
+  </view>
+  <dialog id='dialog' message='{{message}}'></dialog> 
+</view>

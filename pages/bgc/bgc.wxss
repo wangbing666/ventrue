@@ -1,0 +1,24 @@
+/* pages/bgc/bgc.wxss */
+.bg {
+  position: relative;
+  width: 710rpx;
+  margin: 20rpx auto 0rpx;
+  height: 404rpx;
+  border-radius: 20rpx;
+}
+.bg image,.white{
+  width: 710rpx;
+  height: 404rpx;
+  border-radius: 20rpx;
+}
+.white {
+  margin: 20rpx auto 0;
+  background: #fff;
+}
+.bg .selected {
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  right: 0 ;
+  bottom: 0;
+}

@@ -1,0 +1,203 @@
+/* pages/my/applyMaster/applyMaster.wxss */
+.applyMaster{
+ color: #999;
+ font-size: 28rpx;
+}
+.navigation{
+  background: #fff;
+  padding: 0 20rpx;
+  border-bottom: 2rpx solid #ddd;
+  font-size: 50rpx;
+}
+form>view{
+  padding: 20rpx;
+}
+.applyMaster_img{
+  text-align: center;
+  padding-top: 20rpx;
+  background: #fff;
+}
+.applyMaster_img image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.name,.city,.city_movement,.field,.experience,.organization,.fund,.position,.education,.professional,.identity,.ask_price,.topic_name,.topic_time,.topic_price,.topic_achievement{
+  padding: 10rpx 20rpx;
+  border-bottom: 2rpx solid #ddd;
+  background: #fff;
+}
+.professional_detail{
+  font-size: 22rpx;
+}
+.topic>view{
+  margin: 20rpx 0;
+}
+form label{
+  font-size:24rpx;
+}
+form input{
+  color: #333;
+}
+form text{
+  color: red;
+}
+.price_hint{
+  padding: 0 20rpx;
+  font-size: 24rpx;
+}
+.identity label{
+  display: block;
+}
+.identity image{
+  width: 150rpx;
+  height: 150rpx;
+  margin: 10rpx;
+}
+.see_sample{
+  flex: 1;
+  text-align: right;
+}
+.margin{
+  width: 100%;
+  height: 20rpx;
+  background: #ddd;
+}
+.topic{
+  background: #fff;
+  padding: 40rpx 0;
+}
+.topic_title{
+  text-align: center;
+  padding: 30rpx;
+  position: relative;
+}
+.topic_title image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 50%;
+  margin-left: -190rpx;
+}
+.topic_achievement{
+  margin: 80rpx 0 !important;
+}
+.pay_askQuestions{
+  padding: 20rpx;
+  background: #fff;
+}
+.pay_askQuestions view{
+  font-size: 20rpx;
+  padding: 10rpx;
+  text-align: center;
+}
+/* 模态框 */
+.wx_education{
+   position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(17, 17, 17, 0.7);
+}
+.dialog_education{
+    position: fixed;
+    z-index: 5000;
+    min-width: 100rpx;
+    max-width: 600rpx;
+    top: 11%;
+    left: 17%;
+    padding: 20rpx;
+    /* -webkit-transform: translate(-50%, -50%); */
+    transform: translate(-10%, -10%);
+    background-color: #fff;
+    text-align: left;
+    border-radius: 3px;
+    font-size: 28rpx;
+    color: #333;
+}
+.dialog_education_content{
+  max-height: 1000rpx;
+  overflow: auto;
+}
+.dialog_education view{
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+}
+.dialog_education text{
+  color: #999;
+  display: inline-block;
+  margin-bottom: 30rpx;
+}
+.dialog_education button{
+  color: #f90;
+}
+.modal{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 500;
+  bottom: 0;
+}
+.area ,.resources ,.finance,.serve{
+	position: fixed;
+	bottom: 0;
+	z-index: 1500;
+	background-color: #fff;
+	width: 100%;
+}
+.area .head,.resources .head,.finance .head,.serve .head{
+	padding: 0 30rpx ;
+	width: 100%;
+	box-sizing:border-box;
+	background-color: #fafbfa;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 30rpx;
+	border-bottom: 2rpx solid #b2b2b2;
+	height: 80rpx;
+}
+.confirm {
+	color: #09BB07;
+}
+.chooseRes{
+  padding-right: 10rpx;
+  color: #333;
+}
+.chooseArea ,.chooseResource ,.chooseFina,.chooseServ{
+	padding: 32rpx 34rpx 0; 
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+  background: #fff;
+}
+.chooseResource,.chooseServ  {
+	padding: 26rpx 10rpx 0;
+}
+.chooseArea view ,.chooseResource view,.chooseFina view,.chooseServ view{
+	width: 148rpx;
+	height: 60rpx;
+	text-align: center;
+	line-height: 60rpx;
+	border: 2rpx solid #b2b2b2;
+	border-radius: 6rpx;
+	color: #b2b2b2;
+	margin-bottom: 30rpx;
+	font-size: 26rpx;
+}
+.chooseResource view ,.chooseServ view{
+	width: 228rpx;
+	margin-bottom: 24rpx;
+	box-sizing:border-box;
+}
+.chooseArea view.active ,.chooseResource view.active,.chooseFina view.active,.chooseServ view.active{
+	background-color: #09BB07;
+	color: #fff;
+	border: 2rpx solid #09BB07;
+}

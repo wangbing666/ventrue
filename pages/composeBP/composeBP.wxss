@@ -1,0 +1,101 @@
+/* pages/composeBP/composeBP.wxss */
+.composeBP{
+  background: #fff;
+  color: #666;
+  font-size: 28rpx;
+}
+.bpTemplate_title, .cost_budget_title{
+  padding: 10rpx 30rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.bpTemplate_list{
+  padding: 0 10rpx;
+}
+.bpTemplate_icon, .cost_budget_icon{
+  color: #0ca808;
+  padding-right: 20rpx;
+  font-weight: bold;
+}
+.bpTemplate_list_image{
+  width: 49%;
+  height: 210rpx;
+  justify-content: space-around;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+}
+.active{
+  border: 4rpx solid #1AAD19;
+  overflow: hidden;
+}
+.bpTemplate_list_image:nth-child(odd){
+  margin-right: 15rpx;
+}
+.bpTemplate_list_image image{
+  width:100%;
+  height: 210rpx;
+}
+.cost_budget_list{
+   justify-content: space-around; 
+   padding: 0 15rpx;
+}
+.cost_budget_list view{
+  margin: 20rpx 0rpx;
+  text-align: center;
+  padding: 20rpx 50rpx;
+  border: 2rpx solid #ccc;
+  border-radius: 10rpx;
+}
+.current{
+  border: 2rpx solid #0ca808 !important;
+  color: #0ca808;
+}
+.footer{
+  padding: 20rpx;
+  background: #f0f0f6;
+}
+.wechat_consulting, .customer_service_consulting{
+  margin-left: 50rpx;
+}
+.customer_service_consulting view, .wechat_consulting view{
+  color: #0ca808;
+  font-weight: bold;
+}
+.consulting image{
+  width: 100rpx;
+  height: 100rpx; 
+}
+.tel{
+  padding-left: 30rpx;
+  font-size: 48rpx;
+  color: #0ca808;
+  font-weight: bold;
+}
+.next{
+  margin-top: 10rpx;
+}
+.modal{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.modal view{
+  color: #ddd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500rpx;
+  height: 500rpx;
+  font-size: 28rpx;
+  margin-left: -250rpx;
+  margin-top: -250rpx;
+  text-align: center;
+}
+.modal image{
+  margin-top: 30rpx;
+  width: 300rpx;
+  height: 300rpx;
+}

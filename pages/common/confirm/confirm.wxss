@@ -1,0 +1,48 @@
+/* pages/development/development-confirm/development-confirm.wxss */
+.development-confirm{
+  padding: 20rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.contact_card{
+  padding: 30rpx;
+  background: #fff;
+  margin-top: 20rpx;
+  position: relative;
+}
+.contact_name{
+  font-size: 40rpx;
+  color: #333;
+}
+.contact_phone, .contact_company, .contact_wechat{
+  padding-top:30rpx;
+}
+.contact_phone view:nth-child(1), .contact_company view:nth-child(1), .contact_wechat view:nth-child(1){
+  padding-right: 30rpx;
+  color: #999;
+}
+.contact_phone_tel{
+  color: #18b0ff;
+  font-size: 32rpx;
+}
+.contact_imgurl image{
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+.contact_title{
+  margin: 30rpx 0 15rpx 0;
+}
+.demand_detail{
+  background: #fff;
+  padding: 20rpx;
+}
+.demand_detail textarea{
+  width:100%;
+  color: #333;
+}
+.bth_confirm{
+  margin-top: 30rpx;
+}

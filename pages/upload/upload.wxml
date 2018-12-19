@@ -1,0 +1,63 @@
+
+<view class="notany"  wx:if="{{bps.length == 0}}">
+  <image  src="../res/img/notany.png" ></image>
+  <text class="haha">您还没有上传文件</text>
+
+  <view class="savecancelnotany" wx:if="{{!others}}">
+    <view class="save" bindtap='goUpload'>
+      <text>上传文件</text>
+    </view>
+  </view>
+</view>
+
+
+<view class="main" wx:if="{{bps.length >= 0 && !others}}">
+
+    <view class="invoicelist personal" wx:for="{{bps}}"  bindtap="showDetail" data-id="{{item}}">
+      <view class='delete' catchtap='delete' data-id="{{item}}" wx:if="{{!others}}">
+        <image src="../res/img/delete.png"></image>
+      </view>
+      <view class="listleft">
+        <image src="../res/img/{{(type[index] == 'pptx' || type[index] == 'ppt') ? 'ppt':((type[index] == 'doc' || typeof[index] == 'docx') ? 'DOC' : 'PDF')}}.png"></image>
+      </view>
+      <view class="listright">
+        <text class="personalname">{{list[index]}}</text>
+      </view>
+    </view>
+</view>
+
+<view class="main" wx:if="{{bps.length >= 0 && others}}">
+  <checkbox-group bindchange="checkboxChange">
+      <view class="invoicelist personal" wx:for="{{bps}}">
+        <view class='radio'  wx:if="{{others}}">
+          <checkbox value="{{item}}"/>
+        </view>
+        <view class="listleft">
+          <image src="../res/img/{{(type[index] == 'pptx' || type[index] == 'ppt') ? 'ppt':((type[index] == 'doc' || typeof[index] == 'docx') ? 'DOC' : 'PDF')}}.png"></image>
+        </view>
+        <view class="listright">
+          <text class="personalname">{{list[index]}}</text>
+        </view>
+      </view>
+  </checkbox-group>
+</view>
+
+<view class="savecancel" wx:if="{{bps.length > 0 &&  others}}">
+    <view class="save" bindtap='confirm'>
+      <text>确定</text>
+    </view>
+  </view>
+
+<view class="savecancel" wx:if="{{bps.length > 0 &&  !others}}">
+    <view class="save" bindtap='goUpload'>
+      <text>上传文件</text>
+    </view>
+    <view class="save" bindtap="scan">
+      <text>扫一扫上传文件</text>
+    </view>
+  </view>
+
+
+
+
+

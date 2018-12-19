@@ -1,0 +1,171 @@
+/* pages/lookingInvestment/InvestmentDetail/InvestmentDetail.wxss */
+/* 用户详细信息 */
+.Investment_detail{
+  color: #666;
+  font-size: 28rpx;
+}
+.detail_header{
+  background: #46bf1a;
+  color: #fff;
+  font-size: 40rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+}
+.detail_header text{
+  float: left;
+  padding-left: 20rpx;
+}
+.detail_content{
+  padding: 20rpx;
+  position: relative;
+  background: #fff;
+}
+.detail_content_user{
+  width: 400rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.detail_content_user image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+.user_name{
+  font-size: 32rpx;
+  color: #333;
+}
+.user_position{
+  font-size: 28rpx;
+  color: #46bf1a;
+}
+.fund{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  color: #999;
+}
+.detail_content_main{
+  text-align: center;
+  color: #999;
+}
+.user_label{
+  width: 80%;
+  margin: 10rpx auto;
+  justify-content: space-around;
+}
+.user_label view{
+  color: #46bf1a;
+  padding: 5rpx 20rpx;
+  border: 1rpx solid #46bf1a;
+  border-radius: 10rpx;
+}
+.feedback_count{
+  background: #fff;
+  padding: 20rpx;
+  color: #333;
+  margin: 20rpx 0;
+}
+.feedback_count text{
+  color: #46bf1a;
+}
+/* 问题 */
+.problem_content image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 60rpx;
+}
+.problem{
+  padding: 20rpx;
+  background: #fff;
+  margin: 20rpx 0 0;
+  overflow: hidden;
+}
+.problem_content view{
+  flex: 1;
+  padding-left: 10rpx;
+  overflow: hidden;
+  line-height: 1.8;
+  max-height: 100rpx;
+}
+.problem_image{
+  margin-top: 20rpx;
+}
+.problem_image image{
+  width: 100rpx;
+  height: 100rpx;
+  padding-right: 20rpx;
+}
+.problem_user{
+  margin-top: 20rpx;
+  height: 160rpx;
+  float: right;
+}
+.problem_user_detail{
+  padding-right: 100rpx;
+  font-size: 32rpx;
+}
+.problem_user_detail text{
+  color: #46bf1a;
+  font-size: 24rpx;
+}
+.voice{
+  clear: both;
+  justify-content: flex-end;
+}
+.voice_one{
+  width: 300rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+}
+.voice_avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin-left: 20rpx;
+}
+/* 底部 */
+.no_content{
+  text-align: center;
+  background: #ddd;
+  line-height: 100rpx;
+  height: 100rpx;
+  color: #999;
+}
+.blank{
+  width: 100%;
+  height: 88rpx;
+  background: #fff;
+}
+.Investment_detail_btn{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1;
+}
+.Investment_detail_btn button::after {
+  border: 0;
+  border-radius: 0;
+}
+.btn_focus{
+  width: 30%;
+  background: #fff;
+  border-radius: 0;
+}
+.btn_appointment{
+  width: 30%;
+  background: #46bf1a;
+  border-radius: 0;
+  color: #fff;
+  border-right: 1rpx solid #fff;
+}
+.btn_ask{
+  width: 40%;
+  background: #46bf1a;
+  border-radius: 0;
+  color: #fff;
+}
+
+
+

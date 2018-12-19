@@ -1,0 +1,15 @@
+<!--pages/my/questionHome/meet/meetDetail/redPacket/redPacket.wxml-->
+<view class='redPacket_detail'>
+  <view class='main'>
+    <view class='bg'></view>
+    <view class='content'>
+      <view class='red_packet_avaturl'>
+        <image src="{{questionDetail.questioner.avatarUrl}}"></image>
+      </view>
+      <view class='red_packet_title'>{{questionDetail.questioner.nickName}}</view>
+      <view class='red_RMB'>红包</view>
+      <view class='RMB'>{{questionDetail.asked.meetingUnitPrice}}<text>元</text></view>
+      <view class='deposit'>已存入余额，可直接消费</view>
+    </view>
+  </view>
+</view>

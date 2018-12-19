@@ -1,0 +1,139 @@
+<view>
+	<view class="mainInfo">
+		<view class="identity row">
+			<view class="avatar">
+				<image src="{{businessCard.bcPhoto}}"></image>
+			</view>
+			<view class="name">
+        <view class="row">
+          <text>{{businessCard.bcName}}</text>
+          <text class="identityIcon"  wx:if="{{businessCard.identity != 4}}">{{businessCard.identity == 0 ? '创业者' : (businessCard.identity == 1 ? '投资者' : (businessCard.identity == 2 ? '空间' : (businessCard.identity == 3 ?'服务':'其他')))}}</text>
+        </view>
+        <view style="font-size:24rpx">{{businessCard.post}}</view>
+			</view>
+		</view>
+		<!-- 姓名，标签，职务，手机，公司、城市+地址 -->
+		<view class="mobile row">
+			<view class="subTitle">手机</view>
+			<view class="info active"  data-id="{{businessCard.bcMobile}}" bindtap="makeCall">{{businessCard.bcMobile}}</view>
+		</view>
+		<view class="company row">
+			<view class="subTitle">公司</view>
+			<view class="info">{{businessCard.company}}</view>
+		</view>
+		<view class="wechat row">
+			<view class="subTitle">微信</view>
+			<view class="info">{{businessCard.wxNumber}}</view>
+		</view>
+		<view class="city row">
+			<view class="subTitle">城市</view>
+			<view class="info">{{businessCard.city}}</view>
+		</view>
+		<view class="address row" wx:if="{{businessCard.address}}">
+			<view class="subTitle">地址</view>
+			<view class="info active" bindtap="navigateAddr">{{businessCard.address}}</view>
+		</view>
+	</view>
+	<view class="lookTimes row">
+		<view class="look">
+			<image src="../res/img/look.png"></image>
+			<view>
+				查看 {{businessCard.popularity}}
+			</view>
+		</view>
+		<view class="like">
+			<image src="../res/img/like.png">
+			</image>
+			<view>
+				收藏 {{businessCard.collected}}
+			</view>
+		</view>
+	</view>
+	<view class="projectTitle">{{businessCard.identity == 0 ? '创业者' : (businessCard.identity == 1 ? '投资者' : (businessCard.identity == 2 ? '空间' : (businessCard.identity == 3 ?'服务':'')))}}简介</view>
+	<view class="projectInfo">
+		<view class="entrepreneurDesc" wx:if="{{(businessCard.identity == 0 && businessCard.projectBrief) || ( businessCard.identity == 2 && businessCard.spaceSynopsis ) || (businessCard.identity == 3 && businessCard.serviceBrief )}}">
+			<textarea  disabled="true" value="{{businessCard.projectBrief || businessCard.spaceSynopsis || businessCard.serviceBrief}}" />
+		</view>
+    <!-- <view class="domain row" wx:if="{{businessCard.bps}}">
+			<view class="title">BP</view>
+			<view class="selected" style="	border: 1rpx dashed #b2b2b2;	border-radius: 10rpx;" bindtap="goBP">点击查看</view>
+		</view> -->
+		<view class="domain row" wx:if="{{domain}}">
+			<view class="title important">领域</view>
+			<view class="selected">{{domain}}</view>
+		</view>
+		<view class="resource row" wx:if="{{selectInvRes.length>0 && selectInvRes[0] != ''}}">
+			<view class="title">人脉/资源/服务需求</view>
+			<view class="selected" wx:for="{{selectInvRes}}" wx:key="index">{{item}}</view>
+		</view>
+		<view class="projectName row" wx:if="{{businessCard.projectName}}">
+			<view class="title">项目名称</view>
+			<view>{{businessCard.projectName}}</view>
+		</view>
+		<view class="financing row" wx:if="{{businessCard.lunCi && businessCard.lunCi !='点击选择'}}">
+			<view class="title">融资轮次</view>
+			<view class="selected">{{businessCard.lunCi}}</view>
+		</view>
+		<view class="transferRate row" wx:if="{{businessCard.biLi}}">
+			<view class="title">出让比例</view>
+			<view>{{businessCard.biLi}}</view>
+		</view>
+		<view class="transferMoney row" wx:if="{{businessCard.money}}">
+			<view class="title">融资金额</view>
+			<view>{{businessCard.money}}</view>
+		</view>
+		<view class="investorArea row" wx:if="{{selectInvArea.length>0 && selectInvArea[0] != ''}}">
+			<view class="title important">投资领域</view>
+			<view class="selected" wx:for="{{selectInvArea}}" wx:key="index">{{item}}</view>
+		</view>
+		<view class="invest row" wx:if="{{selectInvFinance.length>0 && selectInvFinance[0] != ''}}">
+			<view class="title important">投资阶段</view>
+			<view class="selected" wx:for="{{selectInvFinance}}" wx:key="index">{{item}}</view>
+		</view>
+		<view class="investorCase row" wx:if="{{businessCard.identity == 1 && businessCard.investmentCase}}">
+			<view class="title important">投资案例</view>
+			<view>{{businessCard.investmentCase}}</view>
+		</view>
+		<view class="email row" wx:if="{{businessCard.email}}">
+			<view class="title important">电子邮箱</view>
+			<view>{{businessCard.email}}</view>
+		</view>
+		<!-- <view class="resource row">
+			<view class="title">人脉/资源/服务需求</view>
+			<view class="selected">社保</view>
+		</view> -->
+		<view class="serviceType row" wx:if="{{selectService.length>0 && selectService[0] != ''}}">
+			<view class="title important">服务类别</view>
+			<view class="selected" wx:for="{{selectService}}" wx:key="index">{{item}}</view>
+		</view>
+		<view class="telephone row" wx:if="{{businessCard.landlineNumber}}">
+			<view class="title">固定电话</view>
+			<view class="active"  data-id="{{businessCard.landlineNumber}}" bindtap="makeCall">{{businessCard.landlineNumber}}</view>
+		</view>
+		<view class="url row" wx:if="{{businessCard.webSite}}">
+			<view class="title">项目网址</view>
+			<view>{{businessCard.webSite}}</view>
+		</view>
+		<view class="weibo row" wx:if="{{businessCard.weibo}}">
+			<view class="title">个人微博</view>
+			<view>{{businessCard.weibo}}</view>
+		</view>
+		<view class="qq row" wx:if="{{businessCard.qqNumber}}">
+			<view class="title">个人QQ</view>
+			<view>{{businessCard.qqNumber}}</view>
+		</view>
+		<view class="introduce">
+			<view class="intrTitle">个人简介</view>
+			<textarea value="{{businessCard.bcBrief || '这个人很懒,什么都没有留下...'}}" disabled="true" />
+		</view>
+		<view class="photoTitle" wx:if="{{imgUrls.length>0 && imgUrls[0] != '' }}" style="margin-bottom: 0;">相册</view>
+		<view class="photoArea" wx:if="{{imgUrls[0] != ''}}">
+			<image class="choosePhoto" wx:for="{{imgUrls}}" src="{{item}}" mode="aspectFill" bindtap="previewImg" data-id="{{item}}" wx:key="index"></image>
+		</view>
+	</view>
+	<view class="operBtn" wx:if="{{myId != -1}}" hidden="{{businessCard.enshrine}}" data-id="1" bindtap="addContact">存入名片夹</view>
+	<view class="operBtn" wx:if="{{myId != -1 && businessCard.enshrine}}" data-id="0" bindtap="addContact">移出名片夹</view>
+	<view class="operBtn" bindtap="sendBallBackCard" wx:if="{{myId != -1 && !businessCard.returnCard}}" hidden="{{closeBall}}">回传我的名片</view>
+	<view class="operBtn" bindtap="goEdit" hidden="{{myId != -1}}">10秒创建我的名片</view>
+	<view class="backBtn" bindtap="backMyCard">返回名片夹</view>
+</view>

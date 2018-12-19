@@ -1,0 +1,24 @@
+<view class="valid">
+	<view class="sendCode row">
+	    <view class="col">
+	      <view>手机号</view>
+	    </view>
+	    <view class="col2">
+	      <input type="number" bindinput="savePhoneNumber" placeholder-style="#b2b2b2" placeholder="请输入手机号" />
+	    </view>
+	    <view class="col getValidBtn  {{count!=60 ? '' : 'active'}}">
+	      <view bindtap="getValidCode">{{count!=60?'重新获取'+count+'s':'获取验证码'}}</view>
+	    </view>
+	</view>
+	<view class="inputCode row">
+		<view class="col">
+			<view>验证码</view>
+		</view>
+		<view class="col3">
+			<input type="number" bindinput="saveValidCode" placeholder-style="#b2b2b2" placeholder="请输入验证码" />
+		</view>
+	</view>
+</view>
+<view class="login {{(isValid && isPassed)? 'active' : ''}}" bindtap="goMy">
+	确认
+</view>

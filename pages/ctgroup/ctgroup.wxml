@@ -1,0 +1,11 @@
+<!--ctgroup.wxml-->
+<view class='head'>
+  <text class='title1'>商业人脉资源微信群</text>
+  <text class='title2'>邀请你加入</text>
+  <text class='title3'>拓人脉/找合作/获资讯/发需求/讨经验</text>
+</view>
+
+<view class='body'>
+  <text class='title1'>入群步骤</text>
+   <image class='ingroup' src="../res/img/ingroup.png"></image> 
+</view>

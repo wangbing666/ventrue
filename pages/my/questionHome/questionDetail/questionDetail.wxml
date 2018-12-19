@@ -1,0 +1,103 @@
+<!--pages/my/questionHome/questionDetail/questionDetail.wxml-->
+<wxs  src="../../../../common/lib/filter.wxs" module="Filter"></wxs>
+<view class='questionDetail'>
+  <view class='ask_user'>
+    <view class='ask_info row'>
+      <image src="{{questionDetail.questioner.avatarUrl}}"></image>
+      <view>{{questionDetail.questioner.nickName}} <text>￥1</text> </view>
+    </view>
+    <view class='issue_content'> <text wx:if="{{questionDetail.openness}}">公开</text> {{questionDetail.message}}</view>
+    <view class='ask_time row' wx:if="{{questionList.length == 0}}">
+      <text>{{Filter.getDate(questionDetail.lastModifiedDate)}}</text>
+      <view class='refused_answer'>
+        <button size='mini' type="default" bindtap='refusedAnswer' wx:if="{{!refuse}}">拒绝回答</button>
+        <text wx:if="{{refuse}}">已拒绝，并全额退款</text>
+      </view>
+    </view>
+    <view wx:for="{{questionList}}" wx:key="index" class='answer'>
+      <view class='row'>
+        <image src="{{questionDetail.asked.avatarUrl}}" class='answer_user'></image>
+        <image src="/image/my/answerAudio.jpg" class='answer_audio' bindtap='audioPlay' data-value="{{item}}"></image>
+        <text>{{item.length}}</text>
+        <view class='anew_answer' bindtap='anewAnswerModal' data-value="{{item}}">重答</view>
+        <view class='add_answer' bindtap='addAnswer'>新增</view>
+      </view>
+      <view class='answer_time row'>
+        <view>{{Filter.getDate(item.createdDate)}}</view>
+        <view class='answer_like'>
+          <image src="/image/my/like.jpg"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 语音回答 -->
+  <view class='ask_content' wx:if="{{(questionList.length == 0 || addAnswer) && !refuse}}">
+    <view class='ask_content_message'>
+      <text>公开</text>提问公开回答，回答每被人偷听一次，你就赚￥0.5。
+    </view>
+    <view class='ask_audio'>
+      <view class='ask_audio_msg' wx:if="{{audio}}">最多录制60秒，点击开始</view>
+      <block wx:if="{{recording === false && playing === false && hasRecord === false}}">
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="startRecord">
+            <image src="/image/my/record.png"></image>
+          </view>
+          <view class="page-body-button"></view>
+        </view>
+      </block>
+      <block wx:if="{{recording === true}}">
+        <view class="page-body-time">
+          <text class="time-big">{{formatedRecordTime}}</text>
+        </view>
+        <view class='record'>录音中，点击停止录音</view>
+        <view class="page-body-buttons">
+          <view class="page-body-button"></view>
+          <view class="page-body-button" bindtap="stopRecord">
+            <view class="button-stop-record"></view>
+          </view>
+          <view class="page-body-button"></view>
+        </view>
+      </block>
+      <block wx:if="{{hasRecord === true && playing === false}}">
+        <view class="page-body-time">
+          <text class="time-big">{{formatedRecordTime}}</text>
+        </view>
+        <view class="page-body-buttons">
+          <view class="page-body-button rerecording" bindtap="clear">
+            重录
+          </view>
+          <view class="page-body-button" bindtap="playVoice">
+            <image src="/image/my/play.png"></image>
+          </view>
+          <view class="page-body-button submit" bindtap='submitAudio'>提交</view>
+        </view>
+      </block>
+      <block wx:if="{{hasRecord === true && playing === true}}">
+        <view class="page-body-time">
+          <text class="time-big">{{formatedPlayTime}}</text>
+        </view>
+        <view class='stopVoice'>播放中，点击停止播放</view>
+        <view class="page-body-buttons">
+          <view class="page-body-button rerecording" bindtap="clear">
+            重录
+          </view>
+          <view class="page-body-button" bindtap="stopVoice">
+            <image src="/image/my/stop.png"></image>
+          </view>
+          <view class="page-body-button submit" bindtap='submitAudio'>提交</view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 拒绝回答 -->
+  <view class='refused' wx:if="{{refuse}}">
+    <view class='refused_msg'>你拒绝了{{questionDetail.questioner.nickName}}的提问，并对TA说:</view>
+    <view class='refused_content'>确实不知道</view>
+  </view>
+  <view class='focus'>
+    <view class='focus_wechat'>关注【创投通讯录】微信公众号，才能接收提问、结算通知</view>
+    <view class='steps'>步骤：打开微信-点击右上角 + 添加朋友-公众号-搜索：chuangtbook</view>
+  </view>
+  <dialog id='dialog' message='{{message}}'></dialog>
+</view>

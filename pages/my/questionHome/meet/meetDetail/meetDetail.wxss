@@ -1,0 +1,116 @@
+/* pages/my/questionHome/meet/meetDetail/meetDetail.wxss */
+.appoint{
+  font-size: 32rpx;
+  color: #999;
+}
+.appoint_header{
+  background: #fff;
+  font-size: 32rpx;
+  color: #666;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #ddd;
+}
+.appoint_header text{
+  float: left;
+  font-size: 50rpx;
+}
+.progress{
+  position: relative;
+   background: #fff;
+   padding: 20rpx;
+}
+.progress>view{
+  width: 20%;
+  font-size: 28rpx;
+  text-align: center;
+}
+.progress .dot{
+  width: 20rpx;
+  height: 20rpx;
+  background: #ccc;
+  border-radius: 20rpx;
+  margin: 0 auto;
+}
+.appoint_line{
+  width: 100% !important;
+  height: 2rpx;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  top: 70%;
+}
+.appoint_bp{
+  text-align: center;
+  color: #333;
+  border-top: 2rpx solid #ccc;
+  background: #eee;
+  border-bottom: 2rpx dotted #ccc;
+}
+.appoint_bp view{
+  padding-top: 20rpx;
+}
+.active{
+  background: #f90 !important;
+}
+.my_message, .address{
+  padding: 20rpx;
+  background: #fff;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.my_message text{
+  font-size: 20rpx;
+  color: #999;
+}
+.my_message_content, .address_content{
+  padding: 20rpx 0;
+}
+.my_message_content textarea, .address_content textarea{
+  font-size: 24rpx;
+  width: 100%;
+}
+.meet_btn{
+  padding: 20rpx;
+}
+/* 红包弹框 */
+.red_packet_modal{
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.red_packet{
+  background: #d8583f;
+  width: 80%;
+  height: 800rpx;
+  margin: 200rpx auto;
+  text-align: center;
+  color: #e9ce99;
+  font-size: 28rpx;
+}
+.red_packet_close image{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 20rpx
+}
+.red_packet_avaturl image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.red_packet_open image{
+  margin-top: 40rpx;
+  width: 150rpx;
+  height: 150rpx;
+}
+.red_packet_close{
+  text-align: left;
+}
+.red_RMB{
+  font-size: 36rpx;
+  padding: 40rpx;
+}

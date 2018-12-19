@@ -1,0 +1,248 @@
+/**index.wxss**/
+.uncreate {
+	color: #9b9b9b;
+	font-size: 34rpx;
+	text-align: center
+}
+page{
+  background: #fff;
+}
+.card{
+   background: #f0f0f6; 
+  padding-top: 20rpx;
+}  
+.uncreate image {
+	width: 162rpx;
+	height: 134rpx;
+	margin: 98rpx auto 38rpx;
+}
+.mainInfo{
+  position: relative;
+
+  height: 404rpx;
+}
+.noBg{
+  background:#fff;
+}
+.bg ,.noBg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+.createBtn {
+	background: #1AAD19;
+	border: 2rpx solid #09BB07;
+	border-radius: 8rpx;
+	margin: 144rpx auto 0;
+	width: 690rpx;
+	height: 84rpx;
+	color: #fff;
+	line-height: 84rpx;
+}
+.pending {
+	background: #09bb07;
+	height: 50rpx;
+	padding-left: 80rpx;
+	color: #fff;
+	font-size: 20rpx;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index:1000;
+}
+.pending image {
+	width: 8rpx;
+	height: 14rpx;
+	margin-left: 10rpx;
+}
+.mainInfo {
+	padding: 40rpx;
+	width: 710rpx;
+	margin: 0rpx auto 0;
+	box-sizing:border-box;
+	border-bottom: 2rpx solid #f0f0f6;
+	position: relative;
+	border-radius: 10rpx;
+  z-index: 1;
+}
+.wxCode {
+	width: 98rpx;
+	height: 106rpx;
+	position: absolute;
+	right: 57rpx;
+	top: 164rpx;
+}
+
+.invoice {
+	width: 90rpx;
+	height: 79rpx;
+	position: absolute;
+	right: 59rpx;
+	top: 280rpx;
+}
+
+
+.identity {
+	margin-bottom: 40rpx;
+}
+.avatar image{
+	width: 110rpx;
+	height: 110rpx;
+	border-radius: 5rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 36rpx;
+}
+.name {
+	font-size: 32rpx;
+	color: #333333;
+	align-self: flex-start;
+}
+.identityIcon {
+	font-size: 20rpx;
+	color: #09bb07;
+	padding: 2rpx 10rpx;
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;  
+	margin-left: 10rpx;
+}
+.mainInfo>view:not(:first-child){
+	margin-bottom: 20rpx;
+	font-size: 24rpx;
+}
+.info {
+	margin-left: 20rpx;
+}
+.active[class~='info'] ,.projectInfo .active{
+	color: #3BB5F4;
+}
+.lookTimes {
+	justify-content: flex-end;
+	height: 68rpx;
+	width: 710rpx;
+	margin: 0 auto;
+	border-radius: 0 0 10rpx 10rpx;
+	color: #b2b2b2;
+	font-size: 20rpx;
+}
+.look,.like {
+	text-align: center;
+}
+.look {
+	margin-right: 20rpx;
+}
+.look image {
+	width: 24rpx;
+	height: 14rpx;
+	margin-right: 10rpx;
+}
+.like image {
+	width: 24rpx;
+	height: 24rpx;
+	margin-right: 10rpx;
+}
+.editCardBtn ,.myCard{
+	width: 690rpx;
+	height: 84rpx;
+	border-radius: 8rpx;
+	text-align: center;
+	line-height: 84rpx;
+	background-color: #1aad19;
+	color: #fff;
+	margin: 0 auto;
+	/* border: 2rpx solid #09bb07; */
+	font-size: 34rpx;
+}
+.myCard {
+	color: #666;
+  width: 49%;
+	background-color: #fff;
+  margin: 0;
+  /* border-color: #9b9b9b; */
+}
+.help {
+	width: 690rpx;
+	text-align: center;
+	font-size: 24rpx;
+	color: #b2b2b2;
+	margin-top: 10rpx;
+}
+.edit image {
+	width: 44rpx;
+	height: 44rpx;
+	margin-right: 34rpx;
+}
+.edit .rightArrow,.history .rightArrow ,.group .rightArrow {
+	width: 26rpx;
+	height: 14rpx;
+	transform: rotate(-90deg);
+}
+.generateImg .rightArrow {
+	margin-left: 194rpx;
+	margin-right: 0;
+}
+.history .rightArrow,.group .rightArrow {
+	margin-left: 428rpx;
+	margin-right: 0;
+}
+.edit {
+	margin-top: 10rpx;
+	font-size: 34rpx;
+}
+.edit>view {
+	height: 88rpx;
+}
+.photoArea image {
+	margin-top: 30rpx;
+	width: 220rpx;
+	height: 220rpx;
+	margin-right: 10rpx;
+}
+.imgAndIntr{
+	color: #333;
+	font-size: 32rpx;
+	background: #fff;
+	padding-left: 40rpx;
+	padding-top: 20rpx;
+	padding-bottom: 10rpx;
+}
+.subBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 690rpx;
+  margin: 20rpx auto;
+}
+.card-icon{
+  justify-content: space-around;
+  box-shadow: border-box;
+  font-size: 24rpx;
+  padding: 25rpx 20rpx;
+  color: #666;
+  background: #fff;
+}
+.sign_in, .great_video, .desktop, .office_rental, .BP_write, .development{
+  width: 90rpx;
+  text-align: center;
+  font-size: 22rpx;
+}
+.card-icon image{
+  width: 75rpx;
+  height: 75rpx;
+}
+.ondesktop{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.ondesktop image{
+  width: 100%;
+  height: 100%;
+}

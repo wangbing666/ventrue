@@ -1,0 +1,36 @@
+<view>
+	<view class="header row">
+		<view class="searchBtn row" bindtap="showSearch" wx:if="{{!showSearch}}">
+			<image src="../res/img/search.png"></image>
+			<view>搜索</view>
+		</view>
+		<view class="search row" wx:if="{{showSearch}}">
+			<view class="searchArea">
+				<image src="../res/img/search_active.png"></image>
+				<input type="text" placeholder="请输入关键字" placeholder-style="color:#e5e5e5" focus="true" bindinput="inputContent" confirm-type="search"/>
+			</view>
+			<view class="confirmSearch" bindtap="confirmSearch">搜索</view>
+			<view class="cancelSearch" bindtap="cancelSearch">取消</view>
+		</view>
+	</view>
+	<view class="main">
+		<view class="orderList" wx:for="{{cardList}}">
+			<view class="title row">{{item.group}}</view>
+			<view class="orderItem row" wx:for="{{item.coverCards}}" data-id="{{item.id}}" bindtap="getCard">
+				<view class="leftItem row">
+					<view class="avatar">
+						<image src="{{item.bcPhoto}}" ></image>
+					</view>
+					<view class="baseInfo">
+						<view class="uname row"> <text class="bcName">{{item.bcName}}</text> <text class="identity"wx:if="{{item.identity != 4}}">{{item.identity == 0 ? '创业者' : (item.identity == 1 ? '投资者' : (item.identity == 2 ? '空间' : (item.identity == 3 ?'服务':'其他')))}}</text></view>
+						<view class="company">{{item.company}}</view>
+					</view>
+				</view>
+				<view class="rightItem">
+					<image class="tel" data-id="{{item.bcMobile}}" catchtap="makeCall" src="../res/img/tel.png"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="back" bindtap="toMy">返回</view>
+</view>

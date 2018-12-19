@@ -1,0 +1,86 @@
+<!--pages/my/joinVIP/joinVIP.wxml-->
+<view class='joinVIP'>
+  <view class='user row'>
+      <view class='user_avatarUrl'>
+        <image src="{{card.user.avatarUrl}}"></image>
+      </view>
+      <view class='user_info'>
+          <view class='user_name'>{{card.user.nickName}} <image src="/image/my/__ (3).png" wx:if="{{card.user.userLevel > 0}}"></image></view>
+          <view wx:if="{{card.user.userLevel == 0}}">当前会员等级：无</view>
+          <view wx:if="{{card.user.userLevel == 1}}">当前会员等级:  玄铁会员</view>
+          <view wx:if="{{card.user.userLevel == 2}}">当前会员等级：白银会员</view>
+          <view wx:if="{{card.user.userLevel == 3}}">当前会员等级：黄金会员</view>
+      </view>
+  </view>
+  <view class='joinVIP_list'>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <view class='equities_grade' wx:if="{{card.user.userLevel == 1}}">
+          <view>权益一：每天查看人脉圈5个人脉</view>
+          <view>权益二：显示专属会员标志</view>
+          <view>权益三：专属客服服务</view>
+      </view>
+      <view class='equities_grade' wx:if="{{card.user.userLevel == 2}}">
+          <view>权益一：每天查看人脉圈5个人脉</view>
+          <view>权益二：显示专属会员标志</view>
+          <view>权益三：专属客服服务</view>
+          <view>权益四：提问及约见九折</view>
+          <view>权益五：可联系客服加入49堂创业课微信群，享受一年课程</view>
+      </view>
+      <view class='equities_grade' wx:if="{{card.user.userLevel == 3}}">
+          <view>权益一：每天查看人脉圈5个人脉</view>
+          <view>权益二：显示专属会员标志</view>
+          <view>权益三：专属客服服务</view>
+          <view>权益四：提问及约见八折</view>
+          <view>权益五：可联系客服加入49堂创业课微信群，享受一年课程</view>
+          <view>权益六：可全年参加路演去哪线下精品投融资活动，作为路演项目方参与一场</view>
+          <view>权益七：享受BP诊断</view>
+      </view>
+      <view class="joinVIP_item row" wx:for="{{items}}" wx:if="{{item.status != card.user.userLevel}}">
+        <view class='logo'>
+          <image src="{{item.logo}}"></image>
+        </view>
+        <view class='vip_content'>
+          <view class='vip_name'>{{item.name}} <text> {{item.price}} </text> 元</view>
+          <view class='equities' bindtap='bindModal' data-id="{{item.status}}">相关权益</view>
+        </view>
+        <view class='joinVIP_radio'>
+          <radio value="{{item.price}}"/>
+        </view>
+      </view>
+    </radio-group>
+    <view class='total'>
+      总计：  <text>￥{{total}}</text> 元
+    </view>
+  </view>
+  <view class='wechat_apply'>
+      <button size="default" type="primary" bindtap='bindApply' loading="{{loading}}">微信支付</button>
+  </view>
+</view>
+<view class="modal" bindtouchstart="closeModal" wx:if="{{showModal}}" style="z-index:{{showTips? '1500':'100'}}"></view>
+<view class="limitTips" wx:if="{{showTips}}">
+	<view class="tipsTitle"><text>查看权益</text></view>
+	<view class="tipsContent" wx:if="{{equity == 1}}">
+    <view>权益一：每天查看人脉圈5个人脉</view>
+    <view>权益二：显示专属会员标志</view>
+    <view>权益三：专属客服服务</view>
+  </view>
+  <view class="tipsContent" wx:if="{{equity == 2}}">
+    <view>权益一：每天查看人脉圈5个人脉</view>
+    <view>权益二：显示专属会员标志</view>
+    <view>权益三：专属客服服务</view>
+    <view>权益四：提问及约见九折</view>
+    <view>权益五：可联系客服加入49堂创业课微信群，享受一年课程</view>
+  </view>
+  <view class="tipsContent" wx:if="{{equity == 3}}">
+    <view>权益一：每天查看人脉圈5个人脉</view>
+    <view>权益二：显示专属会员标志</view>
+    <view>权益三：专属客服服务</view>
+    <view>权益四：提问及约见八折</view>
+    <view>权益五：可联系客服加入49堂创业课微信群，享受一年课程</view>
+    <view>权益六：可全年参加路演去哪线下精品投融资活动，作为路演项目方参与一场</view>
+    <view>权益七：享受BP诊断</view>
+  </view>
+	<view class="tipsBtn row">
+      <view class='close' bindtap="closeModal">我知道了</view>
+  </view>
+</view>

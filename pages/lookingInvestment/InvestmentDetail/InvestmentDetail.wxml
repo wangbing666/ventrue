@@ -1,0 +1,56 @@
+<!--pages/lookingInvestment/InvestmentDetail/InvestmentDetail.wxml-->
+<view class='Investment_detail'>
+  <scroll-view scroll-y="true" style="height: 1180rpx;" bindscrolltolower="loadMore">
+    <view class='Investment_detail_main'>
+      <view class='detail_header'>
+        找投资
+      </view>
+      <view class='detail_content'>
+        <view class='detail_content_user'>
+          <image src="{{detail.avatarUrl}}"></image>
+          <view class='user_name'>{{detail.name}}.{{detail.city}}</view>
+          <view class='user_position'>{{detail.servingOrganization}}/{{detail.position}}</view>
+        </view>
+        <view class='fund'>基金介绍</view>
+        <view class='detail_content_main'>{{detail.achievement}}</view>
+        <view class='user_label row'>
+          <view wx:for="{{detail.investmentFields}}" wx:key="index">{{item}}</view>
+        </view>
+      </view>
+    </view>
+    <view class='feedback_count'>
+      <text>{{detail.feedbackCount}}次</text>
+      反馈，私密提问不展示
+    </view>
+    <view class='problem' wx:for="{{questions}}" wx:key="index">
+      <view class='problem_content row'>
+        <image src="{{item.questioner.avatarUrl}}"></image>
+        <view>{{item.message}}</view>
+      </view>
+      <view class='problem_image row'>
+        <image wx:if="{{item.imageUrls.length != 0}}" wx:for="{{item.imageUrls}}" wx:key="index" src="{{item}}"></image>
+      </view>
+      <view class='problem_user' wx:if="{{!item.lookEnabled}}">
+        <view class='problem_user_detail'>
+          <text>{{item.asked.servingOrganization}}/{{item.asked.position}}</text>
+          {{item.asked.name}}.{{item.asked.city}}
+        </view>
+        <view class='voice row'>
+          <text>{{item.eavesdropCount}}人旁听</text>
+          <image class='voice_one' src="/image/lookingInvestment/1yuan.jpg" data-value="{{item}}"    bindtap='bindAudit'></image>
+          <image class='voice_avatar' src="{{item.asked.avatarUrl}}"></image>
+        </view>
+      </view>
+    </view>
+    <view style='width:100%;height:40rpx;'></view>
+  </scroll-view>
+  <view class='no_content' wx:if="{{loadMore}}">没有更多内容了</view>
+  <!-- <view class='blank'></view> -->
+  <view class='Investment_detail_btn row'>
+    <button class='btn_focus' bindtap="bindFocus" wx:if="{{!focus}}">+关注</button>
+    <button class='btn_focus' bindtap="bindFocus" wx:if="{{focus}}">取消关注</button>
+    <button class='btn_appointment' bindtap="bindAppointment" data-value="{{detail}}">同城约见</button>
+    <button class='btn_ask' bindtap="bindQuestions" data-value="{{detail}}">{{detail.questionUnitPrice}}元问他</button>
+  </view>
+  <dialog id='dialog' message='{{message}}'></dialog>
+</view>

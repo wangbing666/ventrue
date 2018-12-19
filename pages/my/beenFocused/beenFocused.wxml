@@ -1,0 +1,23 @@
+<!--pages/my/beenFocused/beenFocused.wxml-->
+<view class='empty' wx:if="{{investmentList.length == 0}}">没有数据</view>
+  <view class='looking_investment_list' wx:if="{{investmentList.length != 0}}">
+      <view class="investment_list row" wx:for="{{investmentList}}" wx:key="index" bindtap='investmentDetail' data-value='{{item}}'>
+        <view class="investment_list_image">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class='investment_list_content'>
+          <view class='investment_list_name'>
+            <text>{{item.name}}.{{item.city}}</text>
+            <image src="/image/lookingInvestment/Focus.png"></image>
+          </view>
+          <view>{{item.servingOrganization}}/{{item.position}}</view>
+          <view class='investment_list_feedback'>
+            <text>{{item.feedbackCount}}</text> 次反馈
+          </view>
+        </view>
+        <view class='investment_list_btn'>
+          <button size="mini" type="default" catchtap="bindQuestions" data-value = "{{item}}">提问</button>
+          <button size="mini" type="default" catchtap="bindAppointment" data-value = "{{item}}">约见</button>
+        </view>
+      </view>
+  </view>

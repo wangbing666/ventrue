@@ -1,0 +1,27 @@
+/* Components/toast/toast.wxss */
+.wx-mask{
+  position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0);
+}
+.wx-dialog{
+    position: fixed;
+    z-index: 5000;
+    min-width: 100rpx;
+    max-width: 600rpx;
+    top: 70%;
+    left: 50%;
+    padding: 5rpx 20rpx;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background-color: rgba(17, 17, 17, 0.7);
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    font-size: 28rpx;
+    color: #fff;
+}

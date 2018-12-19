@@ -1,0 +1,183 @@
+/* pages/my/questionHome/questionDetail/questionDetail.wxss */
+.ask_user{
+  padding: 20rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+.ask_info image, .answer_user{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 40rpx;
+}
+.ask_info view{
+  color: #999;
+  padding-left: 20rpx;
+  flex: 1;
+}
+.ask_info view text{
+  color: red;
+  float: right;
+}
+.issue_content{
+  font-size: 32rpx;
+  color: #333;
+  padding: 20rpx 0 20rpx 100rpx;
+}
+.issue_content text{
+  padding: 4rpx 15rpx;
+  border: 2rpx solid #2db381;
+  border-radius: 10rpx;
+  color: #2db381;
+  font-size: 24rpx;
+}
+.ask_time{
+  color: #999;
+}
+.refused_answer,.answer{
+  flex: 1;
+}
+.refused_answer button{
+  float: right;
+  color: #999;
+}
+.refused_answer text{
+  float: right;
+  color: #999;
+}
+.refused_answer button::after{
+  border-radius: 60rpx;
+}
+.answer{
+  border-bottom: 2rpx solid #ddd;
+}
+.answer text{
+  color: #999;
+}
+.answer_audio{
+  width: 260rpx;
+  height: 80rpx;
+  padding: 20rpx;
+}
+.anew_answer{
+  text-align: center;
+  line-height: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 40rpx;
+  border: 2rpx solid #2db381;
+  color: #2db381;
+  border-radius: 60rpx;
+}
+.add_answer{
+  text-align: center;
+  line-height: 100rpx;
+  margin-left: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: #a1e758;
+  border-radius: 60rpx;
+}
+.answer_like{
+  flex: 1;
+  text-align: right;
+  margin-top: 24rpx;
+}
+.answer_time image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.ask_content{
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.ask_content_message{
+  font-size: 24rpx;
+  color: #999;
+}
+.ask_content_message text{
+  color: #2db381
+}
+/* 录音 */
+.ask_audio{
+  margin: 260rpx 0 200rpx;
+}
+.ask_audio_msg{
+  text-align: center;
+}
+.ask_audio image {
+  width: 150rpx;
+  height: 150rpx;
+}
+.page-body-wrapper {
+  justify-content: space-between;
+  flex-grow: 1;
+  margin-bottom: 300rpx;
+}
+.page-body-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.time-big {
+  font-size: 60rpx;
+  margin: 20rpx;
+  color: #f90;
+}
+.time-small {
+  font-size: 30rpx;
+}
+.page-body-buttons {
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.page-body-button {
+  width: 250rpx;
+  text-align: center;
+}
+.button-stop-record {
+  width: 110rpx;
+  height: 110rpx;
+  border: 20rpx solid #fff;
+  background-color: #f55c23;
+  border-radius: 130rpx;
+  margin: 0 auto;
+}
+.rerecording, .submit{
+  line-height: 160rpx;
+  color: #ccc;
+  font-size: 36rpx;
+}
+.submit{
+  color: #f90;
+}
+.record, .stopVoice{
+  text-align: center;
+  color: #999;
+}
+/* 拒绝回答 */
+.refused{
+  background: #eee;
+  padding: 150rpx 20rpx;
+  height: 150rpx;
+}
+.refused_msg{
+  color: #999;
+  font-size: 32rpx;
+}
+.refused_content{
+  padding-top: 20rpx;
+  color: #333;
+  font-size: 32rpx;
+  text-align: center;
+}
+/* 关注 */
+.focus{
+  background: #fff;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+.focus_wechat{
+  color: #f90;
+}

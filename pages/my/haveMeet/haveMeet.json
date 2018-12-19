@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "找投资人-已约见",
+  "usingComponents": {
+    "dialog": "/Components/toast/toast"
+  }
+}

@@ -1,0 +1,99 @@
+.header {
+	height: 90rpx;
+	background-color: #fff;
+	font-size: 24rpx;
+	color: #e5e5e5;
+	justify-content: center;
+}
+.searchBtn {
+	width: 590rpx;
+	height: 58rpx;
+	border-radius: 100rpx;
+	border: 2rpx solid #e5e5e5;
+	justify-content: center;
+}
+.searchBtn image {
+	width: 34rpx;
+	height: 34rpx;
+	margin-right: 32rpx;
+}
+.title {
+	height: 44rpx;
+	padding-left: 20rpx;
+	background-color: #f0f0f6;
+	font-size: 28rpx;
+	color: #8e8393;
+}
+.orderItem {
+	height: 120rpx;
+	padding: 0 48rpx 0 40rpx;
+	background-color: #fff;
+	justify-content: space-between;
+	border-bottom: 2rpx solid rgba(229,229,229,0.3)
+}
+.avatar image{
+	width: 78rpx;
+	height: 78rpx;
+	border-radius: 4rpx;
+	margin-right: 20rpx;
+}
+.tel {
+	width: 44rpx;
+	height: 44rpx;
+}
+.uname {
+	font-size: 34rpx;
+	color: #000;
+}
+.company {
+	font-size: 28rpx;
+	color: #b2b2b2;
+}
+.identity {
+	font-size: 20rpx;
+	color: #09bb07;
+	padding: 2rpx 10rpx;
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;  
+	margin-left: 10rpx;
+}
+.search {
+	padding: 0 50rpx;
+	font-size: 28rpx;
+}
+.searchArea {
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;
+	width: 478rpx;
+	height: 62rpx;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+.searchArea image {
+	width: 40rpx;
+	height: 40rpx;
+	margin: 0 28rpx;
+}
+.searchArea input {
+	font-size: 24rpx;
+	color: #333;
+}
+.confirmSearch {
+	margin: 0 40rpx 0 20rpx;
+	color: #09bb07;
+}
+.cancelSearch {
+	color: #b2b2b2;
+}
+.back {
+	width: 690rpx;
+	height: 84rpx;
+	border-radius: 8rpx;
+	background-color: #1AAD19;
+	color: #fff;
+	line-height: 84rpx;
+	text-align: center;
+	font-size: 34rpx;
+	margin: 60rpx auto;
+}

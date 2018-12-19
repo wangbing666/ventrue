@@ -1,0 +1,69 @@
+<!--pages/lookingInvestment/lookingInvestment.wxml-->
+<view class='looking_investment'>
+  <!-- 顶部搜索 -->
+  <view class="search row">
+    <view class="searchArea">
+      <image class='search_img' wx:if="{{search}}" src="/image/lookingInvestment/3.1search.png"></image>
+      <input type="text" placeholder="输入投资人信息搜索" placeholder-style="color:#ccc;text-align: center;" bindinput='searchInput' bindblur='blurInput' bindfocus="focusInput"/>
+    </view>
+    <view class='btn row'>
+      <button size="mini" type="default" class='btn_search' bindtap="search">搜索</button>
+      <view class='btn_city'>
+        <picker bindchange="bindPickerCity" value="{{cityIndex}}" range="{{city}}">
+          <view class="weui-input" wx:if="{{cityIndex == ''}}">全国 <image src="../res/img/xiala.png"></image></view>
+          <view class="weui-input" wx:if="{{cityIndex != ''}}">{{city[cityIndex]}}    </view>
+        </picker>
+      </view>
+      <view class='btn_field'>
+        <picker bindchange="bindPickerField" value="{{fieldIndex}}" range="{{field}}">
+          <view class="weui-input"  wx:if="{{fieldIndex == ''}}">领域 <image src="../res/img/xiala.png"></image></view>
+          <view class="weui-input"  wx:if="{{fieldIndex != ''}}">{{field[fieldIndex]}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <!-- 海报 -->
+  <view class='banner' >
+    <image src="http://7xkzti.com1.z0.glb.clouddn.com/user/images/5f90772f10624bd0a031596efade3781"></image>
+  </view>
+  <!-- 分类 -->
+  <view class="classification row">
+    <view class='great_video' wx:for="{{classification}}" wx:key="index"  data-value="{{item.label}}" bindtap='bindClassification'>
+      <view class='classification_img' style="background: {{item.bg}}">
+        <image src="{{item.imgUrl}}"></image>
+      </view>
+      <view>{{item.label}}</view>
+    </view>
+    <picker  class='great_video'  bindchange="bindMore" value="{{fieldIndex}}" range="{{field}}">
+        <view class='classification_img' style="background:#c9d545">
+          <image src="/image/lookingInvestment/3.9fenlei.png"></image>
+        </view>
+        <view>更多分类</view>
+    </picker>
+  </view>
+  <!-- 列表 -->
+  <view class='empty' wx:if="{{investmentList.length == 0}}">没有数据</view>
+  <view class='looking_investment_list' wx:if="{{investmentList.length != 0}}">
+      <view class="investment_list row" wx:for="{{investmentList}}" wx:key="index" bindtap='investmentDetail' data-value='{{item}}'>
+        <view class="investment_list_image">
+          <image src="{{item.avatarUrl}}"></image>
+        </view>
+        <view class='investment_list_content'>
+          <view class='investment_list_name'>
+            <text>{{item.name}}.{{item.city}}</text>
+            <image src="/image/lookingInvestment/notconcern.jpeg" wx:if="{{!item.focus}}" data-id='{{item.id}}' data-status='1' catchtap='bindFocus'></image>
+            <image src="/image/lookingInvestment/Focus.png" wx:if="{{item.focus}}" data-id='{{item.id}}' data-status='2' catchtap='bindFocus'></image>
+          </view>
+          <view>{{item.servingOrganization}}/{{item.position}}</view>
+          <view class='investment_list_feedback'>
+            <text>{{item.feedbackCount}}</text> 次反馈
+          </view>
+        </view>
+        <view class='investment_list_btn'>
+          <button size="mini" type="default" catchtap="bindQuestions" data-value = "{{item}}">提问</button>
+          <button size="mini" type="default" catchtap="bindAppointment" data-value = "{{item}}">约见</button>
+        </view>
+      </view>
+  </view>
+  <dialog id='dialog' message='{{message}}'></dialog>
+</view>

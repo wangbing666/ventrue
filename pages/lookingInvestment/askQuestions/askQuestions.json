@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "最高效的创业融资方式",
+  "usingComponents": {
+    "dialog": "/Components/toast/toast"
+  }
+}

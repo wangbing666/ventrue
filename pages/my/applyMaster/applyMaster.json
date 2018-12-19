@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "答主申请",
+  "usingComponents": {
+    "dialog": "/Components/toast/toast"
+  }
+}

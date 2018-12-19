@@ -1,0 +1,85 @@
+<view class="topchoose tips">
+  <text>发票抬头</text> 
+</view>
+<view class="companyinfo">
+  <view class="row">
+			<view class="leftrow">发票抬头</view>
+			<view class="rightrow">{{invoiceDetail.type ? invoiceDetail.companyName : invoiceDetail.name}}</view>
+	</view>
+
+  <view class="row" wx:if="{{invoiceDetail.tel}}">
+			<view class="leftrow">手机号码</view>
+			<view class="rightrow">{{invoiceDetail.tel}}</view>
+	</view>
+  <view class="row" wx:if='{{invoiceDetail.mailbox}}'>
+      <view class="leftrow">电子邮箱</view>
+      <view class="rightrow">{{invoiceDetail.mailbox}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.companyName}}">
+      <view class="leftrow">公司名称</view>
+      <view class="rightrow">{{invoiceDetail.companyName}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.companyTaxNum}}">
+      <view class="leftrow">公司税号</view>
+      <view class="rightrow bold">{{invoiceDetail.companyTaxNum}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.address}}">
+      <view class="leftrow">公司地址</view>
+      <view class="rightrow">{{invoiceDetail.address}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.tel}}">
+    <view class="leftrow">公司电话</view>
+    <view class="rightrow">{{invoiceDetail.tel}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.bankName}}">
+      <view class="leftrow">开户银行</view>
+      <view class="rightrow">{{invoiceDetail.bankName}} 
+      </view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.bankAccount}}">
+      <view class="leftrow">开户账号</view>
+      <view class="rightrow bold">{{invoiceDetail.bankAccount}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.mailingAddress}}">
+      <view class="leftrow">邮寄地址</view>
+      <view class="rightrow">{{invoiceDetail.mailingAddress}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.mobile}}">
+      <view class="leftrow">联系电话</view>
+      <view class="rightrow">{{invoiceDetail.mobile}}</view>
+  </view>
+  <view class="row" wx:if="{{invoiceDetail.contactName}}">
+      <view class="leftrow">联系人员</view>
+      <view class="rightrow">{{invoiceDetail.contactName}}</view>
+  </view>
+  <view class="show">
+    <image src="{{invoiceDetail.qr}}" bindtap="showImg" data-id="{{invoiceDetail.qr}}" ></image>
+    <text>开票时出示</text>
+  </view>
+</view>
+<view class="savecancel" wx:if="{{!others}}">
+    <view class="save" bindtap="editInvoice">
+      <text>编辑名片</text>
+    </view>
+    <view class="cancel" bindtap="deleteInvoice">
+      <text>删除名片</text>
+    </view>
+</view>
+
+<!-- 自己进入保存的别人的如下：
+<view class="savecancel">
+    <view class="save">
+      <text>删除名片</text>
+    </view>
+</view>
+
+扫码进入如下：
+
+<view class="savecancel">
+    <view class="cancel">
+      <text>保存到我的发票</text>
+    </view>
+    <view class="cancel">
+      <text>创建发票名片</text>
+    </view>
+</view> -->

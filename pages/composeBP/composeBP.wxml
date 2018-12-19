@@ -1,0 +1,45 @@
+<!--pages/composeBP/composeBP.wxml-->
+<view class='composeBP'>
+   <dialog id='dialog' message='{{message}}'></dialog> 
+  <view class="bpTemplate">
+    <view class='bpTemplate_title row'>
+      <text class='bpTemplate_icon'>|</text>
+      <text>BP模板</text>
+    </view>
+    <view class='bpTemplate_list row'>
+      <view class="bpTemplate_list_image {{templateId == index && 'active'}}" wx:for-items="{{imglist}}" wx:key="{{item}}" bindtap="template" data-id="{{item.id}}" id="{{index}}">
+        <image src="{{item.url}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="cost_budget">
+    <view class='cost_budget_title row'>
+      <text class='cost_budget_icon'>|</text>
+      <text>费用预算（专业代写）</text>
+    </view>
+    <view class="cost_budget_list row">
+      <view class="{{costId == index && 'current'}}" wx:for-items="{{cost}}" wx:key="{{item}}" bindtap="cost" data-id="{{index}}">{{item}}</view>
+    </view>
+  </view>
+  <view class='footer'>
+    <view class='consulting row'>
+      <view class='wechat_consulting' bindtap='wechatConsulting'>
+        <image src="../../image/development/1641513322304_.pic.jpg"></image>
+        <view>微信咨询</view>
+      </view>
+      <view class='customer_service_consulting' bindtap="makePhoneCall">
+        <image src="../../image/development/1651513322304_.pic.jpg"></image>
+        <view>客服咨询</view>
+      </view>
+      <view class='tel' bindtap="makePhoneCall">
+        <text>021-61984136</text>
+      </view>
+    </view>
+    <button type="primary" class='next' bindtap="next">下一步</button>
+  </view>
+</view>
+<view class='modal' bindtap='close' wx:if="{{mmWechat}}">
+  <view>截图后打开微信扫一扫添加客服-创小妹
+    <image src="../../image/development/MMwechat.jpg"></image>
+  </view>
+</view>

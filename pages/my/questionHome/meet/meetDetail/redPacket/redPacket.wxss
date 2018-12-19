@@ -1,0 +1,35 @@
+/* pages/my/questionHome/meet/meetDetail/redPacket/redPacket.wxss */
+.main{
+  position: relative;
+}
+.bg{
+  width: 100%;
+  height: 300rpx;
+  background: #d8583f;
+}
+.content{
+  position: absolute;
+  top: 260rpx;
+  z-index: 1;
+  text-align: center;
+  font-size: 28rpx;
+  width: 100%;
+}
+.red_packet_avaturl image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.red_RMB{
+  color: #999;
+}
+.RMB{
+  font-size: 120rpx;
+  font-weight: bold;
+}
+.RMB text{
+  font-size: 28rpx;
+  font-weight: normal;
+}
+.deposit{
+  color: #566cba;
+}

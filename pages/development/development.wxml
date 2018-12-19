@@ -1,0 +1,46 @@
+<!--pages/development/development.wxml-->
+<view class='development'>
+  <dialog id='dialog' message='{{message}}'></dialog> 
+  <view class='development_img'>
+    <image src="../../image/development/1481513316370_.pic_hd.jpg"></image>
+  </view>
+  <view class='requirement_types'>
+    <view class='requirement_types_title'>
+      <icon>|</icon>
+      <text>需求类型</text>
+    </view>
+    <view class='requirement_types_list row'>
+      <view class="{{rmId == index && 'active'}}" wx:for-items="{{requirement}}" wx:key="{{item}}" bindtap="requirement" data-id="{{index}}">{{item}}</view>
+    </view> 
+  </view>
+  <view class='cost'>
+    <view class='cost_title'>
+      <icon>|</icon>
+      <text>费用预算</text>
+    </view>
+    <view class='cost_list row'>
+      <view class="{{costId == index && 'active'}}" wx:for-items="{{cost}}" wx:key="{{item}}" bindtap="cost" data-id="{{index}}">{{item}}</view>
+    </view> 
+  </view>
+  <view class='footer'>
+    <view class='consulting row'>
+      <view class='wechat_consulting' bindtap='wechatConsulting'>
+        <image src="../../image/development/1641513322304_.pic.jpg"></image>
+        <view>微信咨询</view>
+      </view>
+      <view class='customer_service_consulting' bindtap="makePhoneCall">
+        <image src="../../image/development/1651513322304_.pic.jpg"></image>
+        <view>客服咨询</view>
+      </view>
+      <view class='tel' bindtap="makePhoneCall">
+        <text>021-61984136</text>
+      </view>
+    </view>
+    <button type="primary" class='next' bindtap="next">下一步</button>
+  </view>
+</view>
+<view class='modal' bindtap='close' wx:if="{{mmWechat}}">
+  <view>截图后打开微信扫一扫添加客服-创小妹
+    <image src="/image/development/MMwechat.jpg"></image>
+  </view>
+</view>

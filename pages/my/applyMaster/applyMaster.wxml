@@ -1,0 +1,147 @@
+<!--pages/my/applyMaster/applyMaster.wxml-->
+<view class='applyMaster'>
+  <form catchsubmit="formSubmit" class='applyMaster_form'>
+    <view class='applyMaster_img'>
+      <image src="{{avatarUrl}}"></image>
+      <input name="avatarUrl" value="{{avatarUrl}}" style="display:none;"></input>
+    </view>
+    <view class='name'>
+      <label>本人真实姓名（2-20）<text>*</text></label>
+      <input type="text" maxlength="20" name="name" value="{{name}}"></input>
+    </view>
+    <view class='city'>
+      <label>常驻城市  <text>*</text></label>
+      <input type="text" name="city" value="{{city}}"></input>
+    </view>
+    <view class='city_movement'>
+      <label>在常驻城市活动区域，如：中关村（2-20）</label>
+      <input type="text" maxlength="20" name="scope" value="{{scope}}"></input>
+    </view>
+    <view class='field'>
+      <!-- <label>投资领域 <text>*</text></label>
+      <picker   bindchange="bindField" value="{{fieldIndex}}" range="{{field}}">
+          <input disabled='true' name="investmentField" value="{{field[fieldIndex]}}"></input>
+      </picker> -->
+      <view class="investorArea">
+        <view class="important">投资领域</view>
+         <view  bindtap="chooseInvestArea" wx:if="{{selectInvArea.length == 0}}">点击选择</view>
+         <view class='row' wx:if="{{selectInvArea.length>0}}"  bindtap="chooseInvestArea">
+            <view class="chooseRes" wx:for="{{selectInvArea}}">{{item}}</view>
+         </view>
+        <input name="investmentFields"  value="{{investmentFields}}" style="display:none;"></input>
+      </view>
+    </view>
+    <view class='experience'>
+      <label>行业经验<text>*</text></label>
+      <picker   bindchange="bindExperience" value="{{experienceIndex}}" range="{{experience}}">
+          <input disabled='true' name="investmentExperience" value="{{experience[experienceIndex]}}"></input>
+      </picker>
+    </view>
+    <view class='organization'>
+      <label>任职机构（2-20）<text>*</text></label>
+      <input type="text" maxlength="20" name="servingOrganization" value="{{servingOrganization}}"></input>
+    </view>
+    <view class='fund'>
+      <label>基金简介: 包括基金规模，已投项目，投资阶段，投资方向</label>
+      <textarea type="text" auto-height name="fundIntroduced" value="{{fundIntroduced}}"></textarea>
+    </view>
+    <view class='position'>
+      <label>头衔/职位（2-20）<text>*</text></label>
+      <input type="text" maxlength="20" name="position" value="{{position}}"></input>
+    </view>
+    <!-- <view class='education'>
+      <view class='row'>
+        <label>教育背景（20-500字）</label>
+        <view class='see_sample' bindtap='goEducation'>查看示例</view>
+      </view>
+     <textarea type="text" maxlength="20" auto-height name="education" value="{{education}}"></textarea>
+    </view> -->
+    <view class='professional'>
+      <view class='row'>
+        <label>个人简介</label>
+      </view>
+      <view class='professional_detail'>性格、星座、投资倾向、经历项目、学历等信息</view>
+      <textarea type="text" auto-height name="professional" value="{{professional}}"></textarea>
+    </view>
+    <view class='identity'>
+      <label>身份证明材料（名片、工牌、邮箱等）</label>
+      <image wx:for="{{imageUrlList}}" src="{{item}}"></image>
+      <image src="/pages/res/img/addPhoto.png" bindtap="chooseImage"></image>
+    </view>
+    <view class='ask_price'>
+      <label>问题单价<text>*</text></label>
+      <input type="digit" name="questionUnitPrice" value="{{questionUnitPrice}}"></input>
+    </view>
+    <view class='margin'></view>
+    <view class='topic'>
+      <view class='topic_title'>
+        <image src="/image/my/xuanze.png" bindtap='bindSelected' wx:if="{{!selected}}"></image>
+        <image src="/image/my/xuanzhong.png" bindtap='bindSelected' wx:if="{{selected}}"></image>
+      开通约见（可选项）</view>
+      <view wx:if="{{selected}}">
+        <view class='topic_name'>
+          <input type="text" placeholder="话题名称（0-50字）" maxlength="50" name="meetingTopic" value="{{meetingTopic}}"></input>
+        </view>
+        <view class='topic_time'>
+          <picker   bindchange="bindTime" value="{{topicTimeIndex}}" range="{{topicTime}}">
+            <input placeholder='大致时长' disabled='true' name="duration" value="{{topicTime[topicTimeIndex]}}"></input>
+          </picker>
+        </view>
+        <view class='topic_price'>
+          <input type="digit" placeholder='话题价格（元）' name="meetingUnitPrice" value="{{meetingUnitPrice}}"></input>
+        </view>
+        <view class='price_hint'>价格不代表答主自力水平</view>
+        <view class='topic_achievement'>
+          <textarea type="text" placeholder='您在该领域的优势和成就（20-800字）' maxlength="800" auto-height  name="achievement" value="{{achievement}}"></textarea>
+        </view>
+      </view>
+    </view>
+    <view class='pay_askQuestions'>
+      <button size="default" type="primary" formType="submit">提交申请</button>
+      <view>需确保通讯录内电话和微信可沟通，如长期未通过可联系客服</view>
+    </view>
+  </form>
+  <!-- <view class='wx_dialog_edu' wx:if="{{isModal}}">
+    <view class='wx_education'></view>
+    <view class="dialog_education">
+      <view class='dialog_education_content'>
+        <view>教育背景，填写全日制本科及以上的教育经历，包括时间段、学校和专业，可参考以下格式:</view>
+        <text>2007年9月-2009年7月，中国人民大学，人力资源管理专业，在职研究生</text>
+        <text>2003年9月-2007年7月，中国人民大学，行政管理专业，本科（全日制）</text>
+        <view>培训经历，填写接受培训的时间、培训机构和获得的证书，可参考以下格式：</view>
+        <text>2004年 青少年心理问题研究培训（中国红十字协会）</text>
+        <text>2005年 家庭心理治疗培训（北京大学）</text>
+        <text>2007年 儿童虐待问题处理培训（中国红十字协会）</text>
+        <text>2007年 家庭心理治疗研究生课程班（北京大学心理学系）</text>
+        <text>2008年 沙盘游戏心理治疗技术培训班（北京师范大学）</text>
+        <text>2009年-2010年 中英儿童青少年精神分析连续培训项目（中国心理卫生协会精神分裂协会）</text>
+      </view>
+      <button size="default" type="default" bindtap='close'>知道了</button>
+    </view>
+  </view>
+   <view class='wx_dialog_edu' wx:if="{{PModal}}" catchtouchmove='true'>
+    <view class='wx_education'></view>
+    <view class="dialog_education" bindtap='close'>
+      <view class='dialog_education_content'>
+        <view>需填写多段职业经历，描述时间段、任职机构、职位。可参考以下文案：</view>
+        <text>2003-2009年，我在美世咨询（全球最大人力资源咨询公司）拥有近7年咨询经历，历任咨询总监、北方区数据业务负责人、中国区数据业务运营负责人等职。擅长人力资源管理各模块，曾为中外诸多企业提供咨询服务。领导了一些开创性项目。</text>
+        <text>2010-2015年，我供职于外企HRD，全面负责中国区HR管理工作。我负责的范围包括人力资源战略、公司文化、领导力发展、组织变革、量化人力资源管理、企业信息化、薪酬福利、绩效、人才发展等全面管理。</text>
+        <text>2015.06-2016.04，从事互联网+HR创业，Freelancer</text>
+        <text>2016.04-2016.07，互联网教育机构，HRVP</text>
+      </view>
+      <button size="default" type="default" bindtap='close'>知道了</button>
+    </view>
+  </view>  -->
+  <dialog id='dialog' message='{{message}}'></dialog>
+  <view class="modal" wx:if="{{showModal}}" bindtouchstart="closeModal"></view>
+  <view class="area" wx:if="{{showInvertArea}}">
+    <view class="head">
+      <view bindtap="resetInvertArea">清空</view>
+      <view class="confirm" bindtap="closeModal">确定</view>
+    </view>
+    <view class="chooseArea">
+      <view class="{{invArea[index] == item && 'active'}}" wx:for="{{area}}" bindtap="chooseInvertorArea" data-id="{{index}}">{{item}}</view>
+      <view style="visibility: hidden;"></view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,41 @@
+<!--pages/my/haveMeet/haveMeet.wxml-->
+<!--pages/lookingInvestment/askQuestions/haveAsked/haveAsked.wxml-->
+<wxs  src="../../../common/lib/filter.wxs" module="dateFr"></wxs>
+<view class='haveMeet'>
+  <!-- <view class='haveMeet_QR row'>
+    <image src="/image/lookingInvestment/Smallprogram.jpeg" class='QR_image'></image>
+    <view>截图扫描识别或搜索公众号【创投通讯录】关注才能接收回复、退换通知</view>
+  </view> -->
+  <view class='haveMeet_QR row' wx:if="{{ventrue}}">
+    <image src="/image/my/close.png" class='close' bindtap='bindClose'></image>
+    <image src="/image/my/logo.png" class='QR_image'></image>
+    <view>关注【创投通讯录】公众号，了解更多并接收通知消息</view>
+    <button open-type="contact" size='mini'>马上关注</button>
+  </view>
+  <view wx:for="{{haveMeetList}}" wx:key="index">
+    <view class='haveMeet_list'>
+      <view class='haveMeet_list_user row'>
+        <image src="{{item.questioner.avatarUrl}}"></image>
+        <view>{{item.questioner.nickName}}</view>
+        <view class='price'>￥{{item.asked.questionUnitPrice}}</view>
+      </view>
+      <view class='haveMeet_list_ask'>
+        <text wx:if="{{item.openness}}">公开</text> {{item.message}}
+      </view>
+      <view class='ask_time'>{{dateFr.getDate(item.lastModifiedDate)}}</view>
+    </view>
+    <view class='investors row'>
+        <view class='investors_info'>
+          <view class='investors_info_position'>{{item.asked.name}}<text>{{item.eavesdropCount}}人收听</text></view>
+          <view>{{item.asked.servingOrganization}}, {{item.asked.position}}</view>
+        </view>
+        <view class='listen'>
+          <image src="/image/lookingInvestment/notconcern.jpeg" wx:if="{{!item.focus}}" data-id='{{item.id}}' data-status='1' catchtap='bindFocus'></image>
+            <image src="/image/lookingInvestment/Focus.png" wx:if="{{item.focus}}" data-id='{{item.id}}' data-status='2' catchtap='bindFocus'></image>
+          <view>关注</view>
+        </view>
+    </view>
+  </view>
+</view>
+<dialog id='dialog' message='{{message}}'></dialog>
+

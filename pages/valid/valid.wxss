@@ -1,0 +1,55 @@
+.valid {
+	padding: 0 24rpx;
+	background-color: #fff;
+	margin-top: 20rpx;
+}
+.valid input {
+	margin-left: -10rpx;
+}
+.inputCode,.sendCode {
+	font-size: 32rpx;
+	height: 94rpx;
+}
+.sendCode {
+	color: #333;
+	border-bottom: 2rpx solid #d3d5d7;
+}
+.sendCode .col {
+	height: 66rpx;
+	line-height: 66rpx;
+}
+.getValidBtn {
+	padding-left: 42rpx;
+	border-left: 2rpx solid #e5e5e5;
+	margin-left: -14rpx;
+	font-size: 28rpx;
+	color: #b2b2b2;
+}
+.login {
+	width: 670rpx;
+	height: 94rpx;
+	border-radius: 4rpx;
+	text-align: center;
+	line-height: 94rpx;
+	color: #fff;
+	margin-top: 80rpx;
+	margin-left: 40rpx;
+	background: #1aad19;
+	opacity: 0.5;
+}
+.active[class ~= "getValidBtn"] {
+	color: #3BB5F4;
+}
+.active[class ~= "login"] {
+	background: #1aad19;
+	opacity: 1;
+}
+.col {
+	flex: 1
+}
+.col2 {
+	flex: 2
+}
+.col3 {
+	flex: 3
+}

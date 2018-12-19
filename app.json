@@ -1,0 +1,95 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/editCard/editCard",
+    "pages/contacts/contacts",
+    "pages/logs/logs",
+    "pages/cardDetail/cardDetail",
+    "pages/network/network",
+    "pages/my/my",
+    "pages/history/history",
+    "pages/valid/valid",
+    "pages/invoice/invoice",
+    "pages/buildinvoice/buildinvoice",
+    "pages/invoicedetail/invoicedetail",
+    "pages/upload/upload",
+    "pages/banner/banner",
+    "pages/ctgroup/ctgroup",
+    "pages/bgc/bgc",
+    "pages/uploadHelp/uploadHelp",
+    "pages/follow/follow",
+    "pages/development/development",
+    "pages/common/confirm/confirm",
+    "pages/common/success/success",
+    "pages/composeBP/composeBP",
+    "pages/composeBP/BPtemplate/BPtemplate",
+    "pages/greatVideo/greatVideo",
+    "pages/officeRental/officeRental",
+    "pages/officeRental/officeRentalDetail/officeRentalDetail",
+    "pages/greatVideo/videoList/videoList",
+    "pages/lookingInvestment/lookingInvestment",
+    "pages/greatVideo/playVideo/playVideo",
+    "pages/lookingInvestment/InvestmentDetail/InvestmentDetail",
+    "pages/lookingInvestment/audit/audit",
+    "pages/lookingInvestment/classification/classification",
+    "pages/lookingInvestment/askQuestions/askQuestions",
+    "pages/my/haveAsked/haveAsked",
+    "pages/lookingInvestment/appoint/appoint",
+    "pages/my/applyMaster/applyMaster",
+    "pages/my/questionHome/questionHome",
+    "pages/my/questionHome/questionDetail/questionDetail",
+    "pages/my/member/member",
+    "pages/my/questionHome/meet/meet",
+    "pages/my/questionHome/meet/meetDetail/meetDetail",
+    "pages/my/questionHome/meet/meetDetail/redPacket/redPacket",
+    "pages/my/joinVIP/joinVIP",
+    "pages/my/balance/balance",
+    "pages/my/haveMeet/haveMeet",
+    "pages/my/beenFocused/beenFocused",
+    "pages/my/balance/detail/detail",
+    "Components/toast/toast"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#676B70",
+    "selectedColor": "#09BB07",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的名片",
+        "iconPath": "pages/res/img/index.png",
+        "selectedIconPath": "pages/res/img/index_active.png"
+      },
+      {
+        "pagePath": "pages/contacts/contacts",
+        "text": "通讯录",
+        "iconPath": "pages/res/img/contact.png",
+        "selectedIconPath": "pages/res/img/contact_active.png"
+      },
+      {
+        "pagePath": "pages/lookingInvestment/lookingInvestment",
+        "text": "找投资",
+        "iconPath": "image/lookingInvestment/lookingInvestment.png",
+        "selectedIconPath": "image/lookingInvestment/lookingInvestments.png"
+      },
+      {
+        "pagePath": "pages/network/network",
+        "text": "人脉圈",
+        "iconPath": "pages/res/img/network.png",
+        "selectedIconPath": "pages/res/img/network_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我",
+        "iconPath": "pages/res/img/my.png",
+        "selectedIconPath": "pages/res/img/my_active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+<!--pages/greatVideo/greatVideo.wxml-->
+<view class='great_video'>
+  <scroll-view  class="great_video_list" scroll-y="true" style="height: 1180rpx;" bindscrolltolower="loadMore" wx:if="{{videoList.length !== 0}}">
+  <view class='row'>
+    <view class="flex-wrp" wx:for="{{videoList}}" wx:key="index" bindtap='videoDetail' data-value='{{item}}'>
+      <view class="flex-item flex-item-V demo-text-1">
+        <image src="{{item.url}}"></image>
+        <view class='row'>
+          <view class='great_video_title'>{{item.videoTypeName}}</view>
+        </view>
+        <view class='great_videoa_date'>{{item.time}}更新</view>
+      </view>
+    </view>
+  </view>
+  </scroll-view>
+</view>

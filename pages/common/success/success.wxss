@@ -1,0 +1,72 @@
+/* pages/development/development-success/development-success.wxss */
+page{
+  background: #fff;
+}
+.icon-box{
+  text-align: center;
+}
+.icon-box icon{
+  margin-top: 60rpx;
+}
+.icon-box view{
+  text-align: center;
+  margin-top: 30rpx;
+}
+.icon-box-title{
+  color: #333;
+  font-size: 40rpx;
+}
+.icon-box-desc{
+  color: #999;
+  font-size: 28rpx;
+}
+.btn-area{
+  padding: 0 30rpx;
+  margin-top: 40rpx;
+}
+
+/* 联系我们 */
+.contact_us_content{
+  padding: 60rpx 60rpx 0;
+  text-align: center;
+}
+.contact_us_title{
+  color: #333;
+  font-size: 48rpx;
+  font-weight: bold; 
+}
+.contact_us_sweep, .contact_us_qrCode{
+  color: #999;
+}
+.contact_us_qrCode{
+  text-align: center;
+}
+.contact_us_qrCode .qrCode{
+  width: 240rpx;
+  height: 240rpx;
+}
+.contact_us_tel, .contact_us_email{
+  text-align: left;
+  margin-left: 160rpx;
+}
+.screenshot{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align:text-top;
+}
+.add{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align:text-top;
+}
+.sweep{
+  width: 150rpx;
+  height: 50rpx;
+  vertical-align:text-top;
+}
+.tel, .email{
+  width: 50rpx;
+  height: 50rpx;
+  padding-right: 40rpx;
+  vertical-align:text-top;
+}

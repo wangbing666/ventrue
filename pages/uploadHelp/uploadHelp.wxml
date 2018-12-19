@@ -1,0 +1,14 @@
+<!--pages/uploadHelp/uploadHelp.wxml-->
+<view class='howup' style='margin:100rpx auto auto auto;text-align: center;align-items: center;padding-bottom:100rpx;'>
+  <view class='howup1'>
+  <text style='color: #979797;font-size: 30rpx;'>第一步、在PC浏览器输入</text>
+  <text style='color: #09BB07;font-size: 30rpx;margin-left: 20rpx;'>http://001.luyanquna.com</text>
+  </view>
+  <image  src="../res/img/howup.png" lazy-load="true"></image>
+  <view class='howup1'>
+  <text style='color: #979797;font-size: 30rpx;'>第二步、点击扫一扫，扫描浏览器中的二维码</text>
+  </view>
+    <view class="save" bindtap="scan" style='margin-left: 100rpx;'>
+      <text>扫一扫登录，上传文件</text>
+    </view>
+</view>

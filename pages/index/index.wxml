@@ -1,0 +1,133 @@
+<!--index.wxml-->
+<view wx:if="{{card && card.length>0}}" wx:for="{{card}}" wx:key="index" class="card">
+	<view class="pending row" wx:if="{{backCard && backCard.length > 0}}" bindtap="goContact">
+		<view>您有待处理的回传名片</view>
+		<image src="../res/img/rightArr.png"></image>
+	</view>
+	<view class="mainInfo">
+    <image src="{{bg}}" class='bg' wx:if="{{bg != ''}}"></image>
+    <view class='noBg' wx:if='{{bg == ""}}'></view>
+		<image bindtap="createMiniImg" class="wxCode" src="../res/img/wxCode.png"></image>
+		<image bindtap="goInvoice" class="invoice" src="../res/img/invoice.png"></image>
+		<view class="identity row">
+			<view class="avatar">
+				<image src="{{item.bcPhoto || '../res/img/avatar.png'}}" mode="aspectFill"></image>
+			</view>
+			<view class="name">
+        <view class="row">
+          	<text>{{item.bcName}}</text>
+				    <text class="identityIcon" wx:if="{{item.identity != 4}}">{{item.identity == 0 ? '创业者' : (item.identity == 1 ? '投资者' : (item.identity == 2 ? '空间' : (item.identity == 3 ?'服务':'其他')))}}</text>
+        </view>
+        <view style="font-size:24rpx;margin-top:20rpx">{{item.post}}</view>
+			</view>
+		</view>
+		<view class="mobile row" wx:if="{{item.bcMobile}}">
+			<view class="subTitle">手机</view>
+			<view class="info active" data-id="{{item.bcMobile}}" bindtap="makeCall">{{item.bcMobile}}</view>
+		</view>
+		<!-- 姓名，标签，职务，手机，公司、城市+地址 -->
+		<view class="company row" wx:if="{{item.company}}">
+			<view class="subTitle">公司</view>
+			<view class="info">{{item.company}}</view>
+		</view>
+		<!-- <view class="wechat row" wx:if="{{item.wxNumber}}">
+			<view class="subTitle">微信</view>
+			<view class="info">{{item.wxNumber}}</view>
+		</view> -->
+		<view class="city row"  wx:if="{{item.city}}">
+			<view class="subTitle">城市</view>
+			<view class="info">{{item.city}}</view>
+		</view>
+		<view class="address row" wx:if="{{item.address}}">
+			<view class="subTitle">地址</view>
+			<view class="info active" bindtap="navigateAddr" style=" width:400rpx;overflow: hidden;white-space: nowrap; text-overflow: ellipsis;">{{item.address}}</view>
+		</view>
+		<!-- <view class="address row" wx:if="{{item.landlineNumber}}">
+			<view class="subTitle">固定电话</view>
+			<view class="info active"  data-id="{{item.landlineNumber}}" bindtap="makeCall">{{item.landlineNumber}}</view>
+		</view>
+		<view class="address row" wx:if="{{item.webSite}}">
+			<view class="subTitle">项目网址</view>
+			<view class="info">{{item.webSite}}</view>
+		</view>
+		<view class="address row" wx:if="{{item.weibo}}">
+			<view class="subTitle">个人微博</view>
+			<view class="info">{{item.weibo}}</view>
+		</view>
+		<view class="address row" wx:if="{{item.qqNumber}}">
+			<view class="subTitle">个人QQ</view>
+			<view class="info">{{item.qqNumber}}</view>
+		</view>
+		<view class="address row" wx:if="{{item.email}}">
+			<view class="subTitle">电子邮箱</view>
+			<view class="info">{{item.email}}</view>
+		</view> -->
+	</view>
+	<view class="lookTimes row">
+		<view class="look row">
+			<image src="../res/img/look.png"></image>
+			<view>
+				查看 {{item.popularity}}
+			</view>
+		</view>
+		<view class="like row">
+			<image src="../../image/mycard/collect.png">
+			</image>
+			<view>
+				收藏 {{item.collected}}
+			</view>
+		</view>
+	</view>
+
+	<button class="editCardBtn" bindtap="sendCard" open-type="share">递名片</button>
+  <view class="subBtn">
+    <view class="myCard" bindtap="change">更换主题</view>
+    <view class="myCard" bindtap="goEdit">编辑名片</view>
+  </view>
+
+	<!-- <view class="help">使用提示：点击右上角“…”→</view> -->
+	<!-- <view class="help">点击“转发”可发名片给微信好友片</view> -->
+	<view class="edit" bindtap="createShareImg">
+		<view class="generateImg row" style="justify-content:center">
+			<image src="../res/img/moments.png"></image>
+			<view style="color:#84888b">点我生成图片分享到朋友圈</view>
+		</view>
+	</view>
+</view>
+<view class="card-icon row" wx:if="{{card.length>0}}">
+  <view class='great_video' bindtap='onVideo'>
+    <image src="../../image/myCard/2411513662839_.pic.jpg"></image>
+    <view>精彩视频</view>
+  </view>
+  <view class='desktop' bindtap='ondesktop'>
+    <image src="../../image/myCard/2401513662582_.pic.jpg"></image>
+    <view>放到桌面</view>
+  </view>
+  <view class='office_rental' bindtap='officeRental'>
+    <image src="../../image/myCard/office_rental.png"></image>
+    <view>办公租赁</view>
+  </view>
+  <view class='BP_write' bindtap="goBP">
+    <image src="../../image/myCard/BP.png"></image>
+    <view>BP撰写</view>
+  </view>
+  <view class='development' bindtap="goDevelopment">
+    <image src="../../image/myCard/development.png"></image>
+    <view>技术开发</view>
+  </view>
+</view>
+<view class="uncreate" wx:if="{{card && card.length == 0}}">
+	<image src="../res/img/unCreate.png"></image>
+	<view>您尚无创投名片，马上创建一个吧</view>
+	<view>创投名片，高能，便捷，环保！</view>
+	<view class="createBtn" bindtap="goEdit">创建我的名片</view>
+</view>
+<!-- <view class="imgAndIntr" wx:if="{{ imgUrls.length > 0 && imgUrls[0] != ''}}">
+	<view class="photoArea" wx:if="{{imgUrls[0] != ''}}">
+		<image class="choosePhoto" wx:for ="{{imgUrls}}" src="{{item}}" bindtap="previewImg" mode="aspectFill" data-id="{{item}}"></image>
+	</view>
+</view> -->
+<view class="{{desktop ? 'ondesktop' : ''}}" bindtap='close' wx:if="{{desktop}}">
+  <image src="../../image/myCard/2281513661395_.pic.png"></image>
+</view>
+<dialog id='dialog' message='{{message}}'></dialog>

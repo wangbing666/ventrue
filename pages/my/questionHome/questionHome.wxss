@@ -1,0 +1,108 @@
+/* pages/my/questionHome/questionHome.wxss */
+.questionHome{
+  color: #333;
+  font-size: 28rpx;
+}
+.investor{
+  padding: 30rpx;
+  background: #fff;
+}
+.investor_info image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+.investor_name{
+  margin-left: 30rpx;
+}
+.investor_name view{
+  font-size: 40rpx;
+  color: #333;
+  font-weight: bold;
+}
+.investor_name text{
+  color: #999;
+  padding: 10rpx 0;
+}
+.editHome{
+  flex: 1;
+  text-align: right;
+}
+.investor_content{
+  padding: 30rpx;
+}
+.questions_list{
+  margin-top: 20rpx;
+}
+.questions_list_title{
+  font-size: 36rpx;
+  font-weight: bold;
+  padding: 30rpx;
+  background: #fff;
+}
+.listenCount{
+  color: #999;
+  font-size: 24rpx;
+  flex: 1;
+  text-align: right;
+}
+.questions_user{
+  margin-bottom: 20rpx;
+  padding: 30rpx 30rpx 0;
+  background: #fff;
+}
+.user_info{
+  position: relative;
+}
+.user_info image{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.user_info_name{
+  padding-left: 20rpx;
+}
+.questions_price{
+  color: red;
+  text-align: right;
+  padding-right: 40rpx;
+}
+.user_info_status{
+  flex: 1;
+  text-align: right;
+  justify-content: flex-end;
+}
+.appointment{
+  padding: 4rpx 15rpx;
+  border: 2rpx solid #2db381;
+  border-radius: 10rpx;
+  color: #2db381;
+  font-size: 24rpx;
+  position: absolute;
+  left: 120rpx;
+  top: 70rpx;
+}
+.isQuestions{
+  color: #2db381;
+  text-align: right;
+}
+.isAppointment{
+   color: #f90;
+  text-align: right;
+}
+.haveAnswer{
+  color: #ccc;
+  text-align: right;
+}
+.questions_name view{
+  padding: 20rpx 0;
+}
+.questions_name text{
+  color: #999;
+  font-size: 28rpx;
+  margin: 20rpx 0;
+}
+.secretly{
+ flex: 1;
+ text-align: right;
+}

@@ -1,0 +1,47 @@
+
+<view class="main">
+  <view class="invoicelist" bindtap="goInvoicedetail" data-id="{{item.id}}" wx:for="{{invoiceList}}">  
+    <view class="listleft">
+      <image src="../res/img/invoicelist.png"></image>
+    </view>
+    <view class="listright">
+      <text class="companyname">{{item.type ? item.companyName : item.name}}</text>
+      <text class="taxnum" wx:if="{{item.type}}">{{item.type ? item.companyTaxNum : ''}}</text>
+    </view>
+  </view>
+
+  <!-- <view class="invoicelist personal">  
+    <view class="listleft">
+      <image src="../res/img/avatar.png"></image>
+    </view>
+    <view class="listright">
+      <text class="personalname">张棨-小程序</text>
+    </view>
+  </view>  -->
+</view>
+
+<!-- <view class="main others">
+  <view class="invoicelist">  
+    <view class="listleft">
+      <image src="../res/img/invoicelist.png"></image>
+    </view>
+    <view class="listright">
+      <text class="companyname">天黑黑信息科技有限公司</text>
+      <text class="taxnum">9891 1011 02A1 H654 M5H </text>
+    </view>
+  </view>
+
+  <view class="invoicelist personal">  
+    <view class="listleft">
+      <image src="../res/img/avatar.png"></image>
+    </view>
+    <view class="listright">
+      <text class="personalname">谢俊杰</text>
+    </view>
+  </view> 
+</view> -->
+<view class="gobuildinvoice" bindtap="goBuildinvoice">
+
+  <text> 新增发票名片</text>
+
+</view>

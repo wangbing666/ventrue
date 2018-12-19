@@ -1,0 +1,83 @@
+/* pages/my/balance/balance.wxss */
+.balance{
+  background: #fff;
+  height: 100vh;
+}
+.balance_info{
+  padding: 80rpx 20rpx;
+  text-align: center;
+}
+ .balance_operation{
+   padding: 0 20rpx;
+ }
+.balance_info view{
+  margin: 20rpx 0;
+}
+.balance_info image{
+  width: 300rpx;
+  height: 300rpx;
+}
+.my_balance_msg{
+  font-size: 40rpx;
+  color: #333;
+}
+.my_balance{
+  font-size: 80rpx;
+  color: #333;
+  font-weight: bold;
+}
+.balance_operation button{
+  margin: 20rpx 0; 
+}
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+.limitTips {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2000;
+	background-color: #fff;
+	width: 602rpx;
+	border-radius: 10rpx;
+}
+.tipsTitle {
+	padding: 30rpx 0rpx;
+	margin: 0 60rpx;
+	width: 482rpx;
+	border-bottom: 4rpx solid #e5e5e5;
+	font-size: 36rpx;
+	color: #333;
+	text-align: center;
+}
+.tipsContent {
+	padding: 20rpx 60rpx;
+	color: #333;
+	font-size: 26rpx;
+	line-height: 46rpx;
+}
+.tipsContent input{
+  width: 90%;
+}
+.tipsBtn {
+	height: 94rpx;
+	text-align: center;
+	line-height: 94rpx;
+	color: #fff;
+	font-size: 36rpx;
+}
+.close{
+  width: 50%;
+  background: #ccc;
+}
+.membership{
+  width: 50%;
+  background: #09BB07;
+}

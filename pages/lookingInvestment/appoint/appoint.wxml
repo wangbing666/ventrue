@@ -1,0 +1,70 @@
+<!--pages/lookingInvestment/appoint/appoint.wxml-->
+<view class='appoint'>
+  <view class='appoint_header'><text>{{arrow}}</text>向{{appointment.name}}预约</view>
+  <view class='progress row'>
+    <view class='procedure'>
+      <view>预约</view>
+      <view class='dot' ></view>
+    </view>
+    <view>
+      <view>平台审核</view>
+      <view class='dot'></view>
+    </view>
+    <view>
+      <view>资方确认</view>
+      <view class='dot'></view>
+    </view>
+    <view>
+      <view>见面</view>
+      <view class='dot'></view>
+    </view>
+    <view>
+      <view>评价</view>
+      <view class='dot'></view>
+    </view>
+    <view class='appoint_line'></view>
+  </view>
+  <view class='appoint_bp'>
+    <view>{{appointment.meetingTopic}}</view>
+    <view>￥{{appointment.meetingUnitPrice}}</view>
+  </view>
+  <form class='appoint_form' catchsubmit="formSubmit">
+    <view class='appoint_problem'>
+      <view>告诉资方要请教的问题（20-300字）<text>*</text></view>
+      <textarea  name="message" auto-height placeholder='详细的问题描述有助于行家有的放矢' placeholder-style='color:#ccc;' maxlength="300" minlength="20"></textarea> 
+    </view>
+    <view class='appoint_problem'>
+      <view>介绍一下自己，可备注时间地点喜好（20-300字）<text>*</text></view>
+      <textarea  name="preference" auto-height placeholder='您填写的信息只有行家能看到，不会公开给其他人' placeholder-style='color:#ccc;' maxlength="300" minlength="20"></textarea> 
+    </view>
+    <view class='appoint_upload row'>
+        <view class='upload_img'>
+          <image src="/image/lookingInvestment/uploadImg.jpg" bindtap="chooseImage"></image>
+          <view class='screenshots'>截图上传</view>
+        </view>
+        <view class='upload_bp'>
+          <image src="/image/lookingInvestment/uploadBP.jpg" bindtap='navigatorBP'></image>
+          <view>可在我-我的文件中上传BP</view>
+        </view>
+    </view>
+    <view class="weui-uploader appoint_img" wx:if="{{imageList.length != 0}}">
+      <view class="weui-uploader__hd">
+        <view class="weui-uploader__title">点击可预览选好的图片</view>
+        <view class="weui-uploader__info">{{imageList.length}}/9</view>
+      </view>
+      <view class="weui-uploader__bd">
+        <view class="weui-uploader__files">
+          <block wx:for="{{imageList}}" wx:for-item="image">
+            <view class="weui-uploader__file">
+              <image class="weui-uploader__img" src="{{image}}" data-src="{{image}}" bindtap="previewImage"></image>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class='appoint_btn'>
+      <button size="default" type="primary" formType="submit" loading="{{loading}}">提交</button>
+    </view>
+  </form>
+  <dialog id='dialog' message='{{message}}'></dialog>
+</view>

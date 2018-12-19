@@ -1,0 +1,12 @@
+<!--pages/my/balance/detail/detail.wxml-->
+ <wxs  src="../../../../common/lib/filter.wxs" module="Filter"></wxs> 
+<view class='detail'>
+  <view wx:if="{{detailList.length == 0}}">没有数据</view>
+  <view class='detail_list row' wx:if="{{detailList.length > 0}}" wx:for="{{detailList}}" wx:key="index">
+    <view class='use'>
+      <view>{{item.description}}</view>
+      <text>{{Filter.formatTime(item.createdDate,'Y/M/D h:m:s')}}</text>  
+    </view>
+    <view class='price'>- {{item.fee}}</view>
+  </view>
+</view>

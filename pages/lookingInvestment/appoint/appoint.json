@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "投资人预约",
+  "usingComponents": {
+    "dialog": "/Components/toast/toast"
+  }
+}

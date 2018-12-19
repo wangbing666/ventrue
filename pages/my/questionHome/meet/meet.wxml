@@ -1,0 +1,57 @@
+<!--pages/my/questionHome/meet/meet.wxml-->
+<view class='meet'>
+  <view class='appoint_header'>向{{questionDetail.asked.name}}预约</view>
+  <view class='progress row'>
+    <view class='procedure'>
+      <view class="{{(questionDetail.questionState >= 0)  ? 'active_color' : ''}}">预约</view>
+      <view class="dot {{(questionDetail.questionState >= 0)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view class="{{(questionDetail.questionState >= 2)  ? 'active_color' : ''}}">平台审核</view>
+      <view class="dot {{(questionDetail.questionState >= 2)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view class="{{(questionDetail.questionState >= 3)  ? 'active_color' : ''}}">资方确认</view>
+      <view class="dot {{(questionDetail.questionState >= 3)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view class="{{(questionDetail.questionState >= 4)  ? 'active_color' : ''}}">见面</view>
+      <view class="dot {{(questionDetail.questionState >= 4)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view class="{{(questionDetail.questionState >= 5)  ? 'active_color' : ''}}">评价</view>
+      <view class="dot {{(questionDetail.questionState >= 5)  ? 'active' : ''}}"></view>
+    </view>
+    <view class='appoint_line'></view>
+  </view>
+  <view class='appoint_bp'>
+    <view>{{questionDetail.asked.meetingTopic}}</view>
+    <view>￥{{questionDetail.asked.meetingUnitPrice}}</view>
+  </view>
+  <view class='question'>
+    <view class='question_title'>对方要请教的问题</view>
+    <view class='question_content'>{{questionDetail.message}}</view>
+  </view>
+  <view class='introduce_myself'>
+    <view class='introduce_myself_title'>对方的自我介绍</view>
+    <view class='introduce_myself_content'>{{questionDetail.preference}}</view>
+  </view>
+  <view class='opposite_BP' wx:if="{{questionDetail.files.length !=0 || questionDetail.imageUrls.length !=0}}">
+    <view class='opposite_BP_title'>对方的BP文件</view>
+    <view class='row'>
+         <view class='opposite_BP_image' wx:if="{{questionDetail.imageUrls.length !=0}}">
+          <image src="/image/my/tuji.jpeg" bindtap='examineImg'></image>
+          <view>查看图集</view>
+        </view> 
+        <view class='opposite_BP_image' wx:if="{{questionDetail.files.length !=0}}">
+          <image src="/image/my/bp.jpg" bindtap='examineBP'></image>
+          <view>查看BP</view>
+        </view>
+    </view>
+  </view>
+  <view class='meet_btn' wx:if="{{questionDetail.type == 1 && questionDetail.questionState != 1}}">
+    <view><text>狠心拒绝</text></view>
+    <button size="default" type="warn" bindtap='bindAgreed' >同意约见并领取红包</button>
+  </view>
+</view>
+

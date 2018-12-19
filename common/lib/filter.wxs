@@ -1,0 +1,91 @@
+var formatMsgTime = function (timespan) {
+
+    var dateTime = getDate(timespan);
+    var year = dateTime.getFullYear();
+    var month = dateTime.getMonth() + 1;
+    var day = dateTime.getDate();
+    var hour = dateTime.getHours();
+    var minute = dateTime.getMinutes();
+    var second = dateTime.getSeconds();
+    var now = getDate();
+    var now_new = Date.parse(now);  //typescript转换写法
+
+    var milliseconds = 0;
+    var timeSpanStr;
+
+    milliseconds = now_new - timespan;
+
+    if (milliseconds <= 1000 * 60 * 1) {
+      timeSpanStr = '刚刚';
+    }
+    else if (1000 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60) {
+      timeSpanStr = Math.round((milliseconds / (1000 * 60))) + '分钟前';
+    }
+    else if (1000 * 60 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24) {
+      timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60)) + '小时前';
+    }
+    else if (1000 * 60 * 60 * 24 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24 * 15) {
+      timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60 * 24)) + '天前';
+    }
+    else if (milliseconds > 1000 * 60 * 60 * 24 * 15 && year == now.getFullYear()) {
+      timeSpanStr = month + '-' + day + ' ' + hour + ':' + minute;
+    } else {
+      timeSpanStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
+    }
+    return timeSpanStr;
+}
+
+var formatStatus = function (status) {
+  var value;
+  if (status == 0) {
+    value = '问题提交'
+  } else if (status == 1) {
+    value = '已回答'
+  } else if (status == 2) {
+    value ="后台审核通过"
+  } else if (status == 3) {
+    value ="投资人确认"
+  } else if (status == 4) {
+    value ="见面"
+  } else if (status == 5) {
+    value ="评价"
+  } 
+  return value;
+}
+
+//数据转化  
+function formatNumber(n) {
+  n = n.toString()
+  return n[1] ? n : '0' + n
+}
+
+/** 
+ * 时间戳转化为年 月 日 时 分 秒 
+ * number: 传入时间戳 
+ * format：返回格式，支持自定义，但参数必须与formateArr里保持一致 
+*/
+function formatTime(number, format) {
+
+  var formateArr = ['Y', 'M', 'D', 'h', 'm', 's'];
+  var returnArr = [];
+
+  var date = getDate(number);
+  returnArr.push(date.getFullYear());
+  returnArr.push(formatNumber(date.getMonth() + 1));
+  returnArr.push(formatNumber(date.getDate()));
+
+  returnArr.push(formatNumber(date.getHours()));
+  returnArr.push(formatNumber(date.getMinutes()));
+  returnArr.push(formatNumber(date.getSeconds()));
+
+  for (var i = 0; i< returnArr.length; i ++ ) {
+    format = format.replace(formateArr[i], returnArr[i]);
+  }
+  return format;
+}
+
+module.exports = {
+  getDate: formatMsgTime,
+  getStatus: formatStatus,
+  formatTime: formatTime
+}

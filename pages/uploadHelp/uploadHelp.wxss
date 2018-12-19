@@ -1,0 +1,95 @@
+/* pages/uploadHelp/uploadHelp.wxss */
+.notany{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 200rpx auto;
+}
+
+
+.notany image{
+  width: 320rpx;
+  height: 200rpx;
+  
+}
+
+.haha{
+  margin-top: 20rpx;
+  color: #979797;
+  font-size: 30rpx;
+}
+
+.savecancelnotany{
+   position: relative;
+}
+
+.save,.cancel{
+  width: 550rpx;
+  height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 1rpx solid #09BB07;
+  margin-top: 30rpx;
+}
+
+.save{
+  background-color: #09BB07;
+  color: white;
+  line-height: 80rpx;
+}
+
+.cancel{
+  background-color: white;
+  color: #09BB07;
+  line-height: 80rpx;
+}
+
+
+.main{
+  margin-top: 20rpx;
+  background-color: white;
+}
+
+.invoicelist{
+  display: flex;
+  margin-left: 50rpx;
+  border-bottom: 1rpx solid #D8D8D8;
+}
+
+
+.listleft image{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 20rpx 0rpx;
+  border-radius: 10rpx;
+}
+
+
+.listright{
+  padding: 25rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  /* margin-left: 30rpx; */
+  font-size: 30rpx;
+  line-height: 45rpx;
+}
+
+.personalname{
+  line-height: 90rpx;
+  padding-left:30rpx; 
+}
+
+.folder{
+  background-color: #D8D8D8;
+}
+.savecancel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 
+.howup{
+  margin-top: 100rpx;
+} */

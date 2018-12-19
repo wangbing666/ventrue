@@ -1,0 +1,64 @@
+<!--pages/my/questionHome/meet/meetDetail/meetDetail.wxml-->
+<view class='meet'>
+  <view class='appoint_header'><text>{{arrow}}</text>向{{questionDetail.asked.name}}预约</view>
+  <view class='progress row'>
+    <view class='procedure'>
+      <view>预约</view>
+      <view class="dot {{(questionDetail.questionState >= 0)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view>平台审核</view>
+      <view class="dot {{(questionDetail.questionState >= 2)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view>资方确认</view>
+      <view class="dot {{(questionDetail.questionState >= 3)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view>见面</view>
+      <view class="dot {{(questionDetail.questionState >= 4)  ? 'active' : ''}}"></view>
+    </view>
+    <view>
+      <view>评价</view>
+      <view class="dot {{(questionDetail.questionState >= 5)  ? 'active' : ''}}"></view>
+    </view>
+    <view class='appoint_line'></view>
+  </view>
+  <view class='appoint_bp'>
+    <view>{{questionDetail.asked.meetingTopic}}</view>
+    <view>￥{{questionDetail.asked.meetingUnitPrice}}</view>
+  </view>
+  <form catchsubmit="formSubmit">
+    <view class='my_message'>
+      <view class='my_message_title'>我的留言 <text>需填微信、电话等联系方式，建议填写微信并设置可添加</text></view>
+      <view class='my_message_content'>
+        <textarea name="message" auto-height placeholder="请填写留言"/>
+      </view>
+    </view>
+    <view class='address'>
+      <view>我选择的时间地点</view>
+      <view class='address_content'>
+        <textarea name="address" auto-height placeholder="请填写时间地点"/>
+      </view>
+    </view>
+    <view class='meet_btn'>
+      <button size="default" type="warn" formType="submit" loading="{{loading}}">提交并领取约见红包</button>
+    </view>
+  </form>
+  <view class='red_packet_modal' wx:if="{{redPacket}}">
+    <view class='red_packet'>
+      <view class='red_packet_close'>
+        <image src="/image/my/close.png" bindtap='bindclose'></image>
+      </view>
+      <view class='red_packet_avaturl'>
+        <image src="{{questionDetail.questioner.avatarUrl}}"></image>
+      </view>
+      <view class='red_packet_title'>{{questionDetail.questioner.nickName}}给你发了一个红包</view>
+      <view class='red_RMB'>红包</view>
+      <view class='red_packet_open'>
+        <image src="/image/my/redPacket.png" bindtap='bindOpen'></image>
+      </view>
+    </view>
+  </view>
+  <dialog id='dialog' message='{{message}}'></dialog>
+</view>

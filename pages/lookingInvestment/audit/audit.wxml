@@ -1,0 +1,39 @@
+<!--pages/lookingInvestment/audit/audit.wxml-->
+ <wxs  src="../../../common/lib/filter.wxs" module="dateFr"></wxs> 
+<view class='audit' wx:if="{{auditList}}">
+  <view class='audit_main'>
+    <view class='audit_header row'>
+      <image src="{{audit.questioner.avatarUrl}}"></image>
+       <view>{{audit.questioner.nickName}} <text>{{dateFr.getDate(audit.createdDate)}}</text></view> 
+      <view class='price'>￥{{audit.asked.questionUnitPrice}}</view>
+    </view>
+    <view class='audit_content'>
+      <view>{{audit.message}}</view>
+       <image bindtap='previewImage' wx:if="{{audit.imageUrls.length != 0}}" wx:for="{{audit.imageUrls}}" src="{{item}}" data-url="{{item}}" wx:key="index"></image>
+    </view>
+    <view class='audit_count row'>
+      <view>{{audit.eavesdropCount}}人旁听</view>
+    </view>
+  </view>
+  <view class='audit_bth'>
+    <button size="default" type="warn" bindtap="bindAudit" loading="{{loading}}" wx:if="{{!auditList.lookEnabled}}">花一元旁听</button>
+    <button size="default" type="primary" catchtap="bindShare" open-type="share">分享好友</button>
+  </view>
+  <view class='audit_list' wx:if="{{auditList.contents && auditList.lookEnabled}}"  wx:for = "{{auditList.contents}}" wx:key = "index">
+    <view class="audit_list_image row">
+      <image src="{{auditList.asked.avatarUrl}}" class='list_image_avatar'></image>
+      <image src="/image/lookingInvestment/audit.jpg" data-value="{{item}}" class='list_image_audio' bindtap='audioPlay'></image>
+      <text>{{item.length}}"</text>
+      <view class='audit_list_time'>{{dateFr.getDate(item.lastModifiedDate)}}
+        <view class='arrow'></view>
+      </view>
+    </view>
+    <view class='audit_list_main'>
+      <navigator url="/pages/lookingInvestment/InvestmentDetail/InvestmentDetail?id={{auditList.asked.id}}" class="navigator">
+        <view class="navigator-text">{{auditList.asked.name}}.{{auditList.asked.city}} <text>{{auditList.asked.feedbackCount}}次反馈</text></view>
+        <view class="navigator-arrow"></view>
+        <view class='navigator_com'>{{auditList.asked.servingOrganization}}/{{auditList.asked.position}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>

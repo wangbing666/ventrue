@@ -1,0 +1,110 @@
+/* pages/lookingInvestment/appoint/appoint.wxss */
+@import "../../../common/lib/weui.wxss";
+.appoint{
+  font-size: 32rpx;
+  color: #999;
+}
+.appoint_header{
+  background: #fff;
+  font-size: 32rpx;
+  color: #666;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 2rpx solid #ddd;
+}
+.appoint_header text{
+  float: left;
+  font-size: 50rpx;
+}
+.progress{
+  position: relative;
+   background: #fff;
+   padding: 20rpx;
+}
+.progress>view{
+  width: 20%;
+  font-size: 28rpx;
+  text-align: center;
+}
+.progress>view .dot{
+  width: 20rpx;
+  height: 20rpx;
+  background: #ccc;
+  border-radius: 20rpx;
+  margin: 0 auto;
+}
+.appoint_line{
+  width: 100% !important;
+  height: 2rpx;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  top: 70%;
+}
+.appoint_bp{
+  text-align: center;
+  color: #333;
+  border-top: 2rpx solid #ccc;
+  background: #eee;
+  border-bottom: 2rpx dotted #ccc;
+}
+.appoint_bp view{
+  padding-top: 20rpx;
+}
+.appoint_problem{
+  background: #fff;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+.appoint_problem view{
+  color: #333;
+}
+.appoint_problem view text{
+  color: red;
+}
+.appoint_problem textarea{
+  min-height: 60rpx;
+  width: 100%
+}
+.appoint_upload{
+  background: #fff;
+  padding: 20rpx;
+  margin: 20rpx 0;
+}
+.upload_img image{
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+}
+.upload_img{
+  position: relative;
+}
+.screenshots{
+  position: absolute;
+  color: red;
+  font-size: 24rpx;
+  left: 42rpx;
+  bottom: 38rpx;
+}
+.upload_bp{
+  flex: 1;
+  padding: 20rpx;
+}
+.upload_bp image{
+  width: 100%;
+  height: 70rpx;
+}
+.upload_bp view{
+  color: #999;
+  font-size: 28rpx;
+  text-align: center;
+}
+.appoint_img{
+  padding: 20rpx;
+  background: #fff;
+}
+.appoint_btn{
+  padding: 20rpx;
+}

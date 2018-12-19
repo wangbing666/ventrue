@@ -1,0 +1,87 @@
+page {
+  font-size: 28rpx;
+}
+.topchoose{
+  height: 120rpx;
+  background-color: #F3F3F3;
+  display: flex;
+  border-bottom: 1rpx solid #B5B5B5;
+}
+
+.companyinfo{
+  background-color: white;
+  position: relative;
+  padding-top: 20rpx;
+}
+
+.show{
+  text-align: center; 
+  display: flex;
+  flex-direction: column;
+  border-top: 1rpx solid #F3F3F3;
+  color: #B5B5B5;
+  padding-bottom: 30rpx;
+}
+
+
+.show image{
+  width: 275rpx;
+  height: 275rpx;
+  margin: 20rpx auto;
+}
+
+.row{
+  margin-left: 50rpx;
+  margin-bottom: 20rpx;
+}
+
+.rightrow,.leftrow{
+  margin-left: 30rpx;
+  align-self: flex-start
+}
+.rightrow {
+  width: 430rpx;
+  padding-right: 20rpx;
+}
+.tips{
+  text-align: center;
+  height: 80rpx;
+  color: #B5B5B5;
+  border-top: 1rpx solid #D8D7D7;
+  border-bottom: 1rpx solid #D8D7D7;
+}
+
+.tips text{
+  margin-left: 50rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+
+.save,.cancel{
+  margin-left: 100rpx;
+  width: 550rpx;
+  height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  border: 1rpx solid #1aad19;
+  margin-top: 30rpx;
+}
+
+.save{
+  background-color: #1aad19;
+  color: white;
+  line-height: 80rpx;
+}
+
+.cancel{
+  background-color: white;
+  color: #1aad19;
+  line-height: 80rpx;
+}
+.bold {
+  font-weight: bold
+}
+view {
+  white-space: break-all;
+}

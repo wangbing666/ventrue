@@ -1,0 +1,263 @@
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 100;
+}
+.limitTips {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 2000;
+	background-color: #fff;
+	width: 602rpx;
+	border-radius: 10rpx;
+}
+.pending {
+	background: #09bb07;
+	height: 50rpx;
+	padding-left: 80rpx;
+	color: #fff;
+	font-size: 20rpx;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index:1000;
+}
+.pending image {
+	width: 8rpx;
+	height: 14rpx;
+	margin-left: 10rpx;
+}
+.tipsTitle {
+	padding: 30rpx 0rpx;
+	margin: 0 60rpx;
+	width: 482rpx;
+	border-bottom: 4rpx solid #e5e5e5;
+	font-size: 36rpx;
+	color: #333;
+	text-align: center;
+}
+.tipsContent {
+	padding: 20rpx 60rpx;
+	color: #333;
+	font-size: 26rpx;
+	line-height: 46rpx;
+}
+.tipsBtn {
+	height: 94rpx;
+	text-align: center;
+	line-height: 94rpx;
+	color: #fff;
+	font-size: 36rpx;
+}
+.close{
+  width: 30%;
+  background: #ccc;
+}
+.membership{
+  width: 70%;
+  background: #09BB07;
+}
+.banner {
+	height: 375rpx;
+}
+.banner image {
+	width: 100%;
+	height: 234rpx;
+}
+.header {
+	height: 90rpx;
+	background-color: #fff;
+	font-size: 32rpx;
+	position: relative;
+	z-index: 1000;
+}
+.searchBtn image{
+	width: 40rpx;
+	height: 40rpx;
+	margin-left: 80rpx;
+}
+.selectCity {
+	margin-left: 124rpx;
+}
+.selectIndustry {
+	margin-left: 54rpx;
+}
+.selectCity image,.selectIndustry image {
+	width: 20rpx;
+	height: 12rpx;
+	margin-left: 10rpx;
+}
+.cardList {
+	margin-top: 40rpx;
+}
+.cartItem {
+	background-color: #fff;	
+	padding: 0 20rpx;
+}
+.cartItem:not(:last-child) {
+	margin-bottom: 20rpx;
+}
+.mainInfo {
+	height: 166rpx;
+	padding: 38rpx 0 36rpx;
+	box-sizing: border-box;
+	border-bottom: 2rpx solid #e5e5e5;
+}
+.avatar {
+	width: 96rpx;
+	height: 96rpx;
+	border-radius: 50%;
+	margin-right: 40rpx;
+}
+.name {
+	align-self: flex-start;
+	font-size: 32rpx;
+}
+.identity {
+	font-size: 20rpx;
+	color: #09bb07;
+	padding: 2rpx 10rpx;
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;  
+	margin-left: 10rpx;
+}
+.subInfo {
+	padding: 10rpx 0;
+	font-size: 22rpx;
+	color: #b2b2b2;
+}
+.company {
+	margin-left: 50rpx;
+  max-width: 300rpx;
+}
+.company view{
+  max-width: 260rpx;
+}
+.address image ,.company image,.addContact image{
+	margin-right: 10rpx;
+}
+.address image ,.company image{
+	width: 30rpx;
+	height: 34rpx;
+}
+.addContact image {
+	width: 30rpx;
+	height: 30rpx;
+}
+.addContact {
+	color: #666;
+  flex: 1;
+  justify-content: flex-end;
+}
+.addContact .active {
+	color: #b2b2b2;
+	margin-left: 40rpx;
+}
+.search {
+	padding: 0 50rpx;
+	font-size: 28rpx;
+}
+.searchArea {
+	border-radius: 100rpx;
+	border: 2rpx solid #09bb07;
+	width: 478rpx;
+	height: 62rpx;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+.searchArea image {
+	width: 40rpx;
+	height: 40rpx;
+	margin: 0 28rpx;
+}
+.searchArea input {
+	font-size: 24rpx;
+	color: #333;
+}
+.header .active {
+	color: #09BB07;
+}
+.confirmSearch {
+	margin: 0 40rpx 0 20rpx;
+	color: #09bb07;
+}
+.cancelSearch {
+	color: #b2b2b2;
+}
+.citys ,.industry {
+	position: fixed;
+	top: 324rpx;
+	width: 100%;
+	padding: 0 34rpx;
+	background-color: #fff;
+	z-index: 1000;
+	box-sizing: border-box;
+}
+.confirmBtn {
+	height: 140rpx;
+	border-top: 2rpx solid rgba(229,229,229,0.50);
+}
+.city ,.industryList{
+	flex-wrap: wrap;
+	padding: 40rpx 0 10rpx;
+}
+.city view,.industryList view{
+	width: 148rpx;
+	height: 60rpx;
+	border-radius: 6rpx;
+	border: 2rpx solid #b2b2b2;
+	font-size: 26rpx;
+	color: #b2b2b2;
+	text-align: center;
+	margin-bottom: 30rpx;
+	line-height: 60rpx;
+	box-sizing:border-box
+}
+.city view:not(:nth-child(4n)),.industryList view:not(:nth-child(4n)) {
+	margin-right:30rpx;
+}
+.city .active ,.industryList .active{
+	background-color: #09BB07;
+	color: #fff;
+	border-color: #09BB07;
+}
+.confirmBtn view{
+	padding: 18rpx 118rpx;
+	background-color: #09BB07;
+	border-radius: 8rpx;
+	color: #fff;
+	font-size: 32rpx;
+	margin: 0 auto;
+}
+.classification{
+  justify-content: space-around;
+  box-shadow: border-box;
+  font-size: 24rpx;
+  padding:0 20rpx;
+  color: #666;
+  background: #fff;
+}
+.sign_in, .great_video, .desktop, .office_rental, .BP_write, .development{
+  width: 110rpx;
+  text-align: center;
+  margin: 10rpx 30rpx;
+}
+.classification image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.cartItem_title{
+  height: 50rpx;
+}
+.vip image, .member image{
+  width: 40rpx;
+  height: 40rpx;
+  padding: 10rpx 0 0 10rpx;
+}

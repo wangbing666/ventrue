@@ -1,0 +1,35 @@
+<!--pages/lookingInvestment/askQuestions/haveAsked/haveAsked.wxml-->
+<wxs  src="../../../common/lib/filter.wxs" module="dateFr"></wxs> 
+<view class='haveAsked'>
+  <view class='haveAsked_QR row' wx:if="{{ventrue}}">
+    <image src="/image/my/close.png" class='close' bindtap='bindClose'></image>
+    <image src="/image/my/logo.png" class='QR_image'></image>
+    <view>关注【创投通讯录】公众号，了解更多并接收通知消息</view>
+    <button open-type="contact" size='mini'>马上关注</button>
+  </view>
+  <view wx:for="{{questionList}}" wx:key="index" bindtap='bindAudit' data-value="{{item}}">
+    <view class='haveAsked_list'>
+      <view class='haveAsked_list_user row'>
+        <image src="{{item.questioner.avatarUrl}}"></image>
+        <view>{{item.questioner.nickName}}</view>
+        <view class='price'>￥{{item.asked.questionUnitPrice}}</view>
+      </view>
+      <view class='haveAsked_list_ask'>
+        <text wx:if="{{item.openness}}">公开</text> {{item.message}}
+      </view>
+      <view class='ask_time'>{{dateFr.getDate(item.lastModifiedDate)}}</view>
+    </view>
+    <view class='investors row'>
+        <view class='investors_info'>
+          <view class='investors_info_position'>{{item.asked.name}} <text>{{item.eavesdropCount}}人收听</text></view>
+          <view>{{item.asked.servingOrganization}}, {{item.asked.position}}</view>
+        </view>
+        <view class='listen'>
+          <image src="/image/lookingInvestment/notconcern.jpeg" wx:if="{{!item.focus}}" data-id='{{item.asked.id}}' data-status='1' catchtap='bindFocus'></image>
+            <image src="/image/lookingInvestment/Focus.png" wx:if="{{item.focus}}" data-id='{{item.asked.id}}' data-status='2' catchtap='bindFocus'></image>
+          <view>关注</view>
+        </view>
+    </view>
+  </view>
+</view>
+<dialog id='dialog' message='{{message}}'></dialog>

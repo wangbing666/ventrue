@@ -1,0 +1,50 @@
+/* pages/officeRental/officeRental.wxss */
+image{
+  width: 100%;
+}
+.flex-wrp{
+  margin-bottom: 20rpx;
+}
+.office_rental{
+  padding: 20rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+.office_rental_title{
+  color: #333;
+  width: 80%;
+}
+.office_rental_price{
+  width: 20%;
+  text-align: right;
+}
+.office_rental_price text{
+  color: #f90;
+}
+.office_rental_address{
+  font-size: 28rpx;
+  color: #999;
+  padding: 15rpx 0;
+  position: relative;
+}
+.office_rental_address image{
+  width: 40rpx;
+  height: 40rpx;
+  vertical-align: middle;
+  padding-right: 10rpx;
+}
+.share{
+  flex: 1;
+  float: right;
+}
+button::after{
+  border: 0;
+}
+button{
+  position: absolute;
+  display: inline-block;
+  padding: 0;
+  background: #f0f0f6;
+  right: 0;
+  top: 10rpx;
+}

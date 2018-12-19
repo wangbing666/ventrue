@@ -1,0 +1,57 @@
+
+.main{
+  margin-top: 20rpx;
+  background-color: white;
+}
+
+.invoicelist{
+  display: flex;
+  margin-left: 50rpx;
+  border-bottom: 1rpx solid #D8D8D8;
+}
+
+
+.listleft image{
+  width: 100rpx;
+  height: 100rpx;
+  padding: 20rpx 0rpx;
+  border-radius: 10rpx;
+}
+
+
+.listright{
+  padding: 25rpx 0rpx;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  line-height: 45rpx;
+  justify-content: center
+}
+.taxnum {
+  margin-top: 10rpx;
+}
+.personalname{
+  line-height: 90rpx;
+}
+
+.gobuildinvoice{
+  position: absolute;
+  bottom: 80rpx;
+  left: 100rpx;
+  width: 550rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  background-color: #1aad19;
+}
+
+.gobuildinvoice text{
+  color: white;
+  padding: 20rpx auto;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}
+
+.others{
+  margin-top: 20rpx;
+}

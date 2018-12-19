@@ -1,0 +1,16 @@
+/* pages/greatVideo/playVideo/playVideo.wxss */
+.play_video video{
+  width: 100%;
+}
+.play_video_main{
+  padding: 20rpx;
+}
+.play_video_title{
+  color: #000;
+  font-size: 36rpx;
+}
+.play_video_content{
+  font-size: 28rpx;
+  color: #999;
+  padding: 15rpx 0;
+}

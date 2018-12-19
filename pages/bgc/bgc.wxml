@@ -1,0 +1,8 @@
+<!--pages/bgc/bgc.wxml-->
+<view class='bgList'>
+  <view class='white' bindtap='default'></view>
+  <view class='bg' wx:for="{{bgs}}">
+    <image src='{{item}}' data-id='{{item}}' bindtap="selectBg"></image>
+    <!-- <image class='selected' src='../res/img/select.png'></image> -->
+  </view>
+</view>

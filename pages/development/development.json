@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "小程序定制开发",
+  "navigationBarBackgroundColor":"#0ca808",
+  "usingComponents": {
+    "dialog": "/Components/toast/toast"
+  }
+}

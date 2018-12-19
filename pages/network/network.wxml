@@ -1,0 +1,103 @@
+<view>
+	<swiper class="banner" indicator-dots="{{indicatorDots}}"
+	  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-color="#000000" indicator-active-color="#ffffff">
+	  <block wx:for="{{banners}}" >
+	    <swiper-item>
+	      <image src="{{item.url}}"  bindtap="showImg" data-id="{{item.id}}" class="slide-image" width="375" height="187"/>
+	    </swiper-item>
+	  </block>
+	</swiper>
+	<view class="header row">
+		<view class="search row" wx:if="{{showSearch}}">
+			<view class="searchArea">
+				<image src="../res/img/search_active.png"></image>
+				<input type="text" focus="true" placeholder="请输入关键字" placeholder-style="color:#e5e5e5" bindinput="inputContent"/>
+			</view>
+			<view class="confirmSearch" bindtap="confirmSearch">搜索</view>
+			<view class="cancelSearch" bindtap="closeSearch">取消</view>
+		</view>
+ 		<view wx:if="{{!showSearch}}" class="searchBtn row" bindtap="showSearch">
+			<image src="../res/img/search.png"></image>
+		</view>
+		<view wx:if="{{!showSearch}}" class="selectCity row {{showCity ? 'active' : ''}}" bindtap="showCity">
+			<view>{{city}}</view>
+			<image src="../res/img/pullDownBtn{{showCity ? '_active' : ''}}.png"></image>
+		</view>
+		<view  wx:if="{{!showSearch}}" class="selectIndustry row {{showIndustry ? 'active' : ''}}" bindtap="showIndustry">
+			<view>{{industry}}</view>
+			<image src="../res/img/pullDownBtn{{showIndustry ? '_active' : ''}}.png"></image>
+		</view>
+	</view>
+	<view class="pending row" wx:if="{{backCard && backCard.length > 0}}" bindtap="goContact">
+		<view>您有待处理的回传名片</view>
+		<image src="../res/img/rightArr.png"></image>
+	</view>
+	<view  class="cardList" scroll-y="true" style="height: 744rpx;" bindscrolltolower="loadMore">
+		<view>
+			<view class="cartItem" wx:for="{{cardListContent}}" data-id="{{item.id}}" bindtap="getCardDetail" >
+				<view class="mainInfo row">
+					<image src="{{item.bcPhoto}}" class="avatar"></image>
+					<view class="name">
+            <view class="row cartItem_title">
+              <text class="bcName">{{item.bcName}}</text>
+						  <text class="identity" wx:if="{{item.identity != 4}}">{{item.identity == 0 ? '创业者' : (item.identity == 1 ? '投资人' : (item.identity == 2 ? '空间' : (item.identity == 3 ?'服务':'其他')))}}</text>
+              <view class='vip' wx:if="{{item.user.vip}}">
+                <image src="/image/network/VIP.png"></image>
+              </view>
+              <view class='member' wx:if="{{item.user.userLevel != 0}}">
+                <image src="/image/network/member.png"></image>
+              </view>
+            </view>				
+            <view style="font-size:24rpx;margin-top:23rpx">{{item.post}}</view>
+					</view>
+				</view>
+				<view class="subInfo row">
+					<view class="address row">
+						<image src="../res/img/location.png"></image>
+						<view>{{item.city}}</view>
+					</view>
+					<view class="company row">
+						<image src="../res/img/company.png"></image>
+						<view>{{item.company}}</view>
+					</view>
+					<view class="addContact row" catchtap="addContact" data-id="{{item.id}}" data-canadd="{{item.enshrine}}">
+						<image src="../res/img/addContact.png" wx:if="{{!item.enshrine}}"></image>
+						<view wx:if="{{!item.enshrine}}">加为人脉</view>
+						<view class="active" wx:if="{{item.enshrine}}">已经添加</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="modal" bindtouchstart="closeModal" wx:if="{{showModal}}" style="z-index:{{showTips? '1500':'100'}}"></view>
+<view class="limitTips" wx:if="{{showTips}}">
+	<view class="tipsTitle"><text>查看权限</text></view>
+	<view class="tipsContent">
+    <view>☆单用户每天可查看一个人脉；</view>
+    <view>☆查看数超1000，每天可查看3个人脉；</view>
+    <view>☆加入VIP会员每天可查看5个人脉；</view>
+    <view>☆VIP人脉仅VIP会员可查看；</view>
+    <view>☆可通过“发名片”快速积累查看数。</view>
+  </view>
+	<view class="tipsBtn row">
+      <view class='close' bindtap="closeModal">我知道了</view>
+      <view class='membership' bindtap="bindMembership">付费￥365加入会员</view>
+  </view>
+</view>
+<view class="citys" wx:if="{{showCity}}">
+	<view class="city row">
+		<view wx:for="{{citys}}" class="{{selectCity == index && 'active'}}" data-id="{{index}}" data-city="{{item}}" bindtap="selectCity">{{item}}</view>
+	</view>
+	<view class="confirmBtn row" bindtap="closeCity">
+		<view>确认</view>
+	</view>
+</view>
+<view class="industry" wx:if="{{showIndustry}}">
+	<view class="industryList row">
+		<view wx:for="{{industries}}" class="{{selectIndustry == index && 'active'}}"  data-industry="{{item}}" data-id="{{index}}" bindtap="selectIndustry">{{item}}</view>
+	</view>
+	<view class="confirmBtn row" bindtap="closeIndustry">
+		<view>确认</view>
+	</view>
+</view>
